@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Advanced Youtube Configuration</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/ui.css" rel="stylesheet">
+    <script type="text/javascript" src="js/ui.js"></script>
+  </head>
+  <body >
+    <div class="container">
+      <div class="header">
+        <div class="headerbar">
+          <div class="logo headerbar-item"></div>
+          <h3 class="title headerbar-item">Video Configuration</h3>
+        </div>
+      </div>
+
+      <div class="row settings">
+        <div class="col-xs-12">
+            <div class="checkbox">
+              <label>
+                <input id="autoplay" type="checkbox" checked> Play video automatically when player loads.
+              </label>
+            </div>
+        </div>
+      </div>
+      <div class="row settings">
+        <div class="col-xs-12">
+            <div class="checkbox">
+              <label>
+                <input id="autohide" type="checkbox" checked> Hide video controls after a video begins playing.
+              </label>
+            </div>
+        </div>
+      </div>
+      <div class="row settings">
+        <div class="col-xs-12">
+            <div class="checkbox">
+              <label>
+                <input id="loop" type="checkbox" checked> Loop video again and again.
+              </label>
+            </div>
+        </div>
+      </div>
+      <div class="row settings">
+        <div class="col-xs-12">
+            <div class="checkbox">
+              <label>
+                <input id="controls" type="checkbox"> Display player controls.
+              </label>
+            </div>
+        </div>
+      </div>
+      <div class="row settings">
+        <div class="col-xs-12">
+            <div class="checkbox">
+              <label>
+                <input id="disablekb" type="checkbox"> Disable the player keyboard controls.
+              </label>
+            </div>
+        </div>
+      </div>
+
+      <div class="row settings">
+          <div class="col-xs-12">
+            <div class="checkbox">
+              <label>
+                <input id="list" type="text" value="">
+              </label>
+              <label for="list">Playlist ID</label>
+            </div>
+        </div>
+      </div>
+
+      <div class="row settings">
+        <div class="col-xs-2 pull-right">
+          <button id='done' class="btn btn-success">Done</button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2015</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+  </body>
+</html>

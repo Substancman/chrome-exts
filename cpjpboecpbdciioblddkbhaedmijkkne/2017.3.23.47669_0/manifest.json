@@ -1,0 +1,43 @@
+{
+   "app": {
+      "icon_color": "#443939",
+      "launch": {
+         "web_url": "https://www.olx.in/"
+      },
+      "linked_icons": [ {
+         "size": 32,
+         "url": "https://www.olx.in/img/logo_main.png"
+      }, {
+         "size": 48,
+         "url": "https://www.olx.in/img/logo_main.png"
+      }, {
+         "size": 64,
+         "url": "https://www.olx.in/img/logo_main.png"
+      }, {
+         "size": 96,
+         "url": "https://www.olx.in/img/logo_main.png"
+      }, {
+         "size": 113,
+         "url": "https://www.olx.in/img/logo_main.png"
+      }, {
+         "size": 128,
+         "url": "https://www.olx.in/img/logo_main.png"
+      }, {
+         "size": 256,
+         "url": "https://www.olx.in/img/logo_main.png"
+      } ]
+   },
+   "description": "",
+   "icons": {
+      "113": "icons/113.png",
+      "128": "icons/128.png",
+      "256": "icons/256.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "64": "icons/64.png",
+      "96": "icons/96.png"
+   },
+   "key": "1GU+yrFsN8IAVty/rATadTWQtYmwyJJbOLQ76+BBhWc=",
+   "name": "OLX Web",
+   "version": "2017.3.23.47669"
+}

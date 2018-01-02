@@ -1,0 +1,116 @@
+/* override calendar defaults */
+
+#calendar {
+  padding-right: 10px;
+}
+
+#calendar .fc-toolbar>*>* {
+  margin: 0;
+}
+
+#calendar h2 {
+  font-size: 13px;
+  display: inline;
+  padding: 0 4px;
+  height: 27px;
+}
+
+#calendar .fc-toolbar {
+  border-bottom: 1px solid #e5e5e5;
+  height: 50px;
+  padding-top: 11px;
+}
+
+#calendar .fc-toolbar button {
+  background-color: rgb(245, 245, 245);
+  background-image: -webkit-linear-gradient(top, rgb(245, 245, 245), rgb(241, 241, 241));
+  background-origin: padding-box;
+  background-size: auto;
+  border-bottom-color: rgba(0, 0, 0, 0.0980392);
+  border-radius: 2px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgba(0, 0, 0, 0.0980392);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(0, 0, 0, 0.0980392);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(0, 0, 0, 0.0980392);
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: rgb(68, 68, 68);
+  font-size: 11px;
+  font-weight: bold;
+  height: 27px;
+  line-height: 27px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 16px;
+}
+
+/* active buttons */
+#calendar button.fc-state-active {
+  background-color: rgb(238, 238, 238);
+  background-image: -webkit-linear-gradient(top, rgb(238, 238, 238), rgb(224, 224, 224));
+  border-bottom-color: rgb(204, 204, 204);
+  border-bottom-style: solid;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-left-color: rgb(204, 204, 204);
+  border-left-style: solid;
+  border-right-color: rgb(204, 204, 204);
+  border-right-style: solid;
+  border-top-color: rgb(204, 204, 204);
+  border-top-style: solid;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 2px 0px inset;
+}
+
+#calendar button.fc-state-hover {
+  color: rgb(34, 34, 34);
+  border-color: rgb(198, 198, 198);
+  background-image: -webkit-linear-gradient(top, rgb(248, 248, 248), rgb(241, 241, 241));
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 1px 0px;
+}
+
+/* day button */
+#calendar button.fc-basicDay-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0;
+}
+
+/* week button */
+#calendar button.fc-agendaWeek-button {
+  border-radius: 0;
+  margin-right: 0;
+}
+
+/* month button */
+#calendar button.fc-month-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-right: 0;
+}
+
+/* next button */
+#calendar button.fc-next-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left-width: 0;
+}
+
+/* previous button */
+#calendar button.fc-prev-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0;
+}
+

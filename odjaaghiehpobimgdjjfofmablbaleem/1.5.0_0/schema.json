@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "display_settings": {
+      "title": "Display configuration.",
+      "type": "object",
+      "id": "DisplaySettings",
+      "properties": {
+        "rotation": { "type": "integer" }
+      }
+    },
+    "schedule": {
+      "title": "Dictionary of known configurations.",
+      "type": "array",
+      "id": "ScheduleArray",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name" : { "type" : "string"},
+          "items" : {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "start" : { "type" : "string"},
+                "end" : { "type" : "string"},
+                "duration" : { "type" : "integer"},
+                "content" : { "type" : "string"},
+                "zone" : { "type" : "string"},
+                "zoneWidth" : { "type" : "string"},
+                "zoneHeight" : { "type" : "string"},
+                "zoneXOffset" : { "type" : "string"},
+                "zoneYOffset" : { "type" : "string"},
+                "repetition" : { "type" : "string"},
+                "autoReload" : { "type" : "integer"},
+                "cachePolicy": { "type": "string" }
+              }
+            }
+          },
+          "defaultUrl": { "type" : "string" }
+        }
+      }
+    }
+  }
+}

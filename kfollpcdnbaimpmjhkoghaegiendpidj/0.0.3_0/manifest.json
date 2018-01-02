@@ -1,0 +1,24 @@
+{
+   "author": "Sam Collins",
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon32.png",
+      "default_title": "DevDocs"
+   },
+   "description": "Quickly find DevDocs without wasting a tab",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "32": "icon32.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtFW1twmSGRpLWsQEGcMJhX4JIPIgdDWjXs+5y5bGCq1CqOcQt87LgX5uQU3hMwMjgZ2t6pnMLfWUYWDDpObFpxfWP6GI6wCuJl0GZ+CIAgQT5QqpUMA6VCdrqihk2+8+5GHYCqZXN5hH1BAW+unNtM6PLzsYGIAptnk2UO6HJtYEuChRt8YBoI3SEaTDTLrrauQLwlc9MwWmb8jFUDuMwESU40JJFyAH12YX5CxTL7Es7a2Dc83u+Jx0FW1k0tHBYqKLoLZnm3WXTEc09aQPmyOAjWUE6TrLotDO6SHZ+hoBISc8pMfvr0FgHtDnNjSeVotjhWEIMDqt0jiNXc7bJQIDAQAB",
+   "manifest_version": 2,
+   "name": "DevDocs",
+   "offline_enabled": true,
+   "short_name": "DevDocs",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.3"
+}

@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Analytics Pros dataLayer Inspector+</title>
+		<link href="css/Popup_Main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+		<a id="ap-logo-link" href="http://www.analyticspros.com" target="_blank" ><img id="ap-logo" src="images/AnalyticsProsLogo.png"></a>
+		<div id="container-tools">
+			<div id="container-tools-observe" class="tools-observe tool-category">
+        <div id="inspect-dataLayer-div">
+          <input  type="checkbox"
+                  id="inspectDataLayer"
+                  title="dataLayer Inspector -Use this to inspect dataLayer pushes before they trigger events or pageviews"
+                  class="tool">
+                  <label for="inspectDataLayer" class="cbx-label" title="dataLayer Inspector - Use this to inspect dataLayer pushes before they trigger events or pageviews">
+                     Inspect:&nbsp;
+          </label>
+          <input type="text"
+                   class="txt-input txt-dataLayer-name"
+                   placeholder="dataLayer"
+                   id="dataLayer-name-text-field"
+                   value="dataLayer"
+                   title="Enter your dataLayer name, if different than 'dataLayer'">
+        </div>
+			</div>
+      <div id="advanced-options">
+        <div id="advanced-options-control" class="advanced-option">
+          <img id="ap-advanced-toggle" src="images/expand.png" title="Show advanced options"/>
+          <label id="ap-advanced-toggle-label">&nbsp;Advanced Options</label>
+          <span id="advanced-options-badge"></span>
+        </div>
+        <div id="advanced-options-contents">
+          <div id="classic-mode" class="inspector-option">
+            <input  type="checkbox"
+                    id="cbx_classic_mode"
+                    title="Classic Mode - Simple dataLayer pushes without all the details"
+                    class="tool">
+                    <label for="cbx_classic_mode" class="cbx-label" title="Classic Mode - Simple dataLayer pushes without all the details">
+                       Classic Mode
+            </label>
+          </div>
+          <div id="wait-for-dataLayer" class="inspector-option">
+            <input  type="checkbox"
+                    id="cbx-wait-for-dataLayer"
+                    title="Wait for dataLayer - When the dataLayer is not correctly setup."
+                    class="tool">
+                    <label for="cbx-wait-for-dataLayer" class="cbx-label" title="Wait for dataLayer - When the dataLayer is not correctly setup.">
+                       Wait for dataLayer
+            </label>
+          </div>
+          <div id="insert-controls">
+            <label class="lbl-control-set inspector-option control-set-label">
+              Add to page
+            </label>
+            <div id="dataLayer-push" class="inspector-option">
+              <input  type="checkbox"
+                      id="injectDataLayer"
+                      title="dataLayer Injector - Use this to inject an event or data into the dataLayer before GTM loads"
+                      class="tool">
+                      <label for="injectDataLayer" class="cbx-label" title="dataLayer Injector - Use this to inject an event or data into the dataLayer before GTM loads">
+
+
+        			<span id="dataLayer-push-name">dataLayer</span>.push({</label>
+         				<div id="div-dataLayer-push">
+                  <textarea id="txt-dataLayer-push"
+          									class="txt-area-input"
+          									cols="30"
+          									rows="1"
+          									placeholder="&quot;event&quot;: &quot;dataLayer-ready&quot;"
+          									title="Enter the object key value pairs to push into the dataLayer on initialization of GTM injection"></textarea>
+                </div>})
+            </div>
+      			<div id="gtm-container-controls" class="inspector-option">
+            <input  type="checkbox"
+                      id="injectGTM"
+                      title="GTM Injector - Use this to insert a GTM container into a page."
+                      class="tool">
+                      <label  for="injectGTM"
+                              class="cbx-label"
+                              title="GTM Injector - Use this to insert a GTM container into a page.">
+                      Insert GTM Container
+                      </label>
+                      <br>
+      				<div id="inject-gtm" >
+      					<div class="container-input">
+      						<label for="regtm-containergex">GTM-</label>
+                  <input type="text"
+      											 class="txt-input"
+      											 id="gtm-container"
+      											 title="Enter your GTM Conainer ID">
+                </div>
+      					<br>
+
+      					Host: <input type="text"
+      											 class="txt-input"
+      											 placeholder="www.domain.com"
+      											 id="hostName"
+                             class="tool"
+      											 title="Enter the target host name - The GTM container will only be injected if the string matches the host name exactly or the RegEx">
+      					<input type="checkbox"
+      								 class="checkbox"
+      								 id="regex"
+      								 title="Uncheck for Exact or Check for RegEx Match">
+      						<label  for="regex"
+      						        class="cbx-label"
+      						        title="Uncheck for Exact or Check for RegEx Match">
+      						RegEx
+      						</label>
+      					<br>
+      				</div>
+      			</div>
+            <div id="code-push-controls" class="inspector-option">
+              <input  type="checkbox"
+                        id="cbx-injectCode"
+                        class="tool"
+                        title="Code Injector - Use this to inject code into a page.">
+                        <label  for="cbx-injectCode"
+                                class="cbx-label"
+                                title="Code Injector - Use this to inject code into a page.">
+                        Inject Code
+                        </label>
+                <div id="code-push">
+                  <textarea id="txt-code-push"
+                              class="txt-area-input"
+                              cols="120"
+                              rows="4"
+                              placeholder="console.log('>> Code Injected')"
+                              title="Paste code here to run immediately on the page"></textarea>
+              </div>
+            </div>
+          </div>
+          <div id="hide-output-controls">
+            <label class="lbl-control-set inspector-option  control-set-label">
+              Limit output
+            </label>
+            <div id="hide-timing" class="inspector-option">
+              <input  type="checkbox"
+                      id="cbx_hide_timing"
+                      title="Hide Timing - Time since Document Start for pushes and hits"
+                      class="tool">
+                      <label for="cbx_hide_timing" class="cbx-label" title="Hide Timing - Time since Document Start for pushes and hits">
+                         Hide Timing
+              </label>
+            </div>
+            <div id="ignore-redirects" class="inspector-option">
+              <input  type="checkbox"
+                      id="cbx_ignore_redirects"
+                      title="Ignore Internal Redirects - Internal redirects can slow hits down, break sessions, and confuse analysts and developers."
+                      class="tool">
+                      <label for="cbx_ignore_redirects" class="cbx-label" title="Ignore Internal Redirects - Internal redirects can slow hits down, break sessions, and confuse people.">
+                         Ignore Internal Redirects
+              </label>
+            </div>
+            <div id="ignore-events-controls" class="inspector-option">
+                <input  type="checkbox"
+                          id="cbx-ignore-specific-events"
+                          class="tool"
+                          title="Ignore events - use a regex expression to identify events to ignore. (Example - ^gtm|ec:click)">
+                          <label  for="cbx-ignore-specific-events"
+                                  class="cbx-label"
+                                  title="Ignore events - use a regex expression to identify events to ignore. (Example - ^gtm|ec:click)">
+                          Hide specific events
+                          </label>
+                <div id="ignore-specific-events">
+                  <textarea id="txt-ignore-specific-events-list"
+                              class="txt-area-input"
+                              cols="20"
+                              rows="1"
+                              placeholder="^gtm|ec:click"
+                              title="Events to ignore as regex expressions. (Example - ^gtm|ec:click)"></textarea>
+              </div>
+            </div>
+            <div id="ignore-property-controls" class="inspector-option">
+              <input  type="checkbox"
+                        id="cbx-ignore-properties"
+                        class="tool"
+                        title="Ignore properties - use a regex expression to identify properties to ignore.">
+                        <label  for="cbx-ignore-properties"
+                                class="cbx-label"
+                                title="Ignore properties - use a regex expression to identify properties to ignore.">
+                        Ignore hits to specific properties
+                        </label>
+                <div id="ignore-specific-properties">
+                  <textarea id="txt-ignore-property"
+                              class="txt-area-input"
+                              cols="20"
+                              rows="1"
+                              placeholder="UA-12345-1"
+                              title="Enter properties to ignore"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div  id="container-info-specification"
+            class="tools-performance tool-category">
+            <span class="tool-title">
+              Handy Links
+            </span>
+        <div  id="ua-ga-dev-tools"
+              title="Account Explorer, Campaign URL Builder, Dimensions &amp; Metrics Explorer, and more." class="tool">
+					<a  href="https://ga-dev-tools.appspot.com/"
+              target="_blank">
+              Discover the Google Analytics Platform
+            </a>
+
+				</div>
+        <div  id="ua-collect-parameters-specification"
+              title="Google's Specification"
+              class="tool">
+					<a  href="https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters"
+              target="_blank">
+              Measurement Protocol Parameter Reference
+            </a>
+				</div>
+        <div  id="ua-enhanced-ecommerce-specification"
+              title="Learn what is in the ecommerce dataLayer" class="tool">
+					<a  href="https://developers.google.com/tag-manager/enhanced-ecommerce"
+              target="_blank">
+              Enhanced Ecommerce (UA) Developer Guide
+            </a>
+
+				</div>
+
+			</div>
+		</div>
+    <table class="nav" align="center">
+      <tr>
+        <td>
+          <div id="button-area">
+            <button id="update-button"
+                    tabindex="1">
+            Save &amp; Reload Page
+          </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script src="js/Popup_Main.js"></script>
+  <script type="text/javascript" src="js/gtm.js"></script>
+</html>

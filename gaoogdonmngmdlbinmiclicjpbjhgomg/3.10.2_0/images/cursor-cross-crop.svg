@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;" xmlns="http://www.w3.org/2000/svg">
+  <g id="Layer-1" transform="matrix(1, 0, 0, 1, -4, -3.999999)">
+    <g>
+      <g opacity="0.850006">
+        <g>
+          <clipPath id="_clip1">
+            <rect x="4" y="4.001" width="23" height="22.999"/>
+          </clipPath>
+          <g clip-path="url(#_clip1)">
+            <g>
+              <g opacity="0.850006">
+                <rect x="15" y="4" width="1" height="11" style="fill:rgb(35,31,32);fill-rule:nonzero;"/>
+                <rect x="15" y="16" width="1" height="11" style="fill:rgb(35,31,32);fill-rule:nonzero;"/>
+              </g>
+            </g>
+            <g>
+              <g opacity="0.850006">
+                <rect x="4" y="15" width="11.002" height="1" style="fill:rgb(35,31,32);fill-rule:nonzero;"/>
+                <rect x="16" y="15" width="11" height="1" style="fill:rgb(35,31,32);fill-rule:nonzero;"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g>
+      <g opacity="0.149994">
+        <path d="M21,15.5C21,18.537 18.537,21 15.5,21C12.462,21 10,18.537 10,15.5C10,12.462 12.462,10 15.5,10C18.537,10 21,12.462 21,15.5" style="fill:rgb(35,31,32);fill-rule:nonzero;"/>
+      </g>
+    </g>
+    <g>
+      <g opacity="0.300003">
+        <clipPath id="_clip2">
+          <rect x="9.5" y="9.5" width="12" height="12"/>
+        </clipPath>
+        <g clip-path="url(#_clip2)">
+          <path d="M21,15.5C21,18.537 18.537,21 15.5,21C12.462,21 10,18.537 10,15.5C10,12.462 12.462,10 15.5,10C18.537,10 21,12.462 21,15.5Z" style="fill:none;stroke-width:1px;stroke:rgb(35,31,32);"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

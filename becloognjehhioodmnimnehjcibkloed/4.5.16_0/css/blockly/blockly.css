@@ -1,0 +1,98 @@
+/**
+ * Copyright 2016 The Coding with Chrome Authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * Blockly custom CSS definitions.
+ *
+ * @author mbordihn@google.com (Markus Bordihn)
+ */
+
+.blocklySvg {
+  background-color: #ECEFF1 !important;
+}
+
+.blocklyHtmlInput {
+  font-size: 11pt !important;
+}
+
+.blocklyFlyoutBackground {
+  fill: #CFD8DC !important;
+}
+
+.blocklyScrollbarBackground {
+  opacity: 1 !important;
+  fill: #ECEFF1;
+  stroke: #CFD8DC;
+  stroke-width: 1;
+}
+
+.blocklyScrollbarKnob {
+  fill: #90A4AE !important;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarKnob,
+  .blocklyScrollbarKnob:hover {
+  fill: #78909C !important;
+}
+
+.blocklyText {
+  font-family: inherit !important;
+  font-size: 14px !important;
+}
+
+.blocklyToolboxDiv {
+  background: rgba(200,200,200,0.5);
+}
+
+.blocklyToolboxDiv [role=treeitem] [role=group] {
+  padding-left: 20px;
+}
+
+.blocklyTreeRoot {
+  padding: 4px !important;
+}
+
+.blocklyTreeRow {
+  padding: 4px 10px 4px 0px !important;
+  border-radius: 3px;
+  background-color: #FAFAFA;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+
+.blocklyTreeRowItem_sprites > .blocklyTreeRow {
+  border-left: 0 !important;
+  padding-left: 8px !important;
+}
+
+.blocklyTreeLabel {
+  cursor: pointer !important;
+  font-family: inherit !important;
+  font-size: 15px !important;
+}
+
+.blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-accel,
+  .blocklyWidgetDiv .goog-menuitem-disabled .goog-menuitem-content {
+  color: #CCC !important;
+}
+
+.blocklyWidgetDiv .goog-menu,
+.blocklyWidgetDiv .goog-menuitem,
+.blocklyWidgetDiv .goog-menuitem-content {
+  font-family: inherit !important;
+  font-size: 14px !important;
+}
+
+

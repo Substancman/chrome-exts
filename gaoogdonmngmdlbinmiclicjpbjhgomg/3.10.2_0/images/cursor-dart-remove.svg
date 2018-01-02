@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="28px" height="40px" viewBox="0 0 28 40" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" xmlns="http://www.w3.org/2000/svg">
+  <g id="Layer-2">
+    <path d="M5,25C5,29.97 9.03,34 14,34C18.97,34 23,29.97 23,25C23,20.029 18.97,16 14,16C9.03,16 5,20.029 5,25Z" style="fill:url(#_Linear1);fill-rule:nonzero;"/>
+    <path d="M4,18.422L4,2.407L15.591,14.026L8.55,14.026L8.399,14.15L4,18.422Z" style="fill:white;fill-rule:nonzero;"/>
+    <g>
+      <g opacity="0.600006">
+        <clipPath id="_clip2">
+          <rect x="10.172" y="21.172" width="7.657" height="7.657"/>
+        </clipPath>
+        <g clip-path="url(#_clip2)">
+          <path d="M15.414,25L17.535,22.879C17.926,22.488 17.926,21.855 17.535,21.464C17.145,21.074 16.512,21.074 16.121,21.464L14,23.586L11.878,21.464C11.488,21.074 10.855,21.074 10.464,21.464C10.074,21.855 10.074,22.488 10.464,22.879L12.586,25L10.464,27.121C10.074,27.512 10.074,28.145 10.464,28.536C10.855,28.926 11.488,28.926 11.878,28.536L14,26.414L16.121,28.536C16.512,28.926 17.145,28.926 17.535,28.536C17.926,28.145 17.926,27.512 17.535,27.121L15.414,25Z" style="fill:black;"/>
+        </g>
+      </g>
+    </g>
+    <path d="M5,4.814L5,16.002L7.969,13.136L8.129,12.997L13.165,12.997L5,4.814Z" style="fill:black;fill-rule:nonzero;"/>
+  </g>
+  <defs>
+    <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,18,-18,0,14,16)">
+      <stop offset="0" style="stop-color:rgb(241,241,241);stop-opacity:1"/>
+      <stop offset="1" style="stop-color:rgb(214,214,214);stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+</svg>

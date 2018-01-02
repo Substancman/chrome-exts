@@ -1,0 +1,19 @@
+{
+   "api_console_project_id": "875955645682",
+   "app": {
+      "launch": {
+         "web_url": "https://sketchboard.me"
+      }
+   },
+   "container": [ "DOMAIN_INSTALLABLE", "GOOGLE_DRIVE" ],
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "icons": {
+      "128": "icon-128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDTWLPJttI3DiOwQleu9NQ+18O0BZ1LOF4b9c8sx3X9CzezUC8Slfz5WGTcXqMPLc3sPYNqwhgkqd6AMl8YCr/Q7zLXnOPn2msvLwrSU8tO48mtBLL64Z5Crao53uXaqRFeLvVfurNnUouRwvV3Uj+5EGYakZqaDDeoU5u8lgrvvQIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_appName__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.0.0"
+}

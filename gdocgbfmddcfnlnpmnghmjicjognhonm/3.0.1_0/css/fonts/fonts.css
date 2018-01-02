@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'FontLight';
+    src: url('crc25-webfont.eot');
+    src: url('crc25-webfont.eot?#iefix') format('embedded-opentype'),
+    	   url('crc25-webfont.svg#FontLight') format('svg'),
+         url('crc25-webfont.woff') format('woff'),
+         url('crc25-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+      font-family: 'FontLight';
+      src: url('crc25-webfont.svg#FontLight') format('svg');
+  }
+}
+
+@font-face {
+    font-family: 'FontRegular';
+    src: url('crc35-webfont.eot');
+    src: url('crc35-webfont.eot?#iefix') format('embedded-opentype'),
+    		 url('crc35-webfont.svg#FontRegular') format('svg'),
+         url('crc35-webfont.woff') format('woff'),
+         url('crc35-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FontLight2';
+    src: url('k_font-light.eot');
+    src: url('k_font-light.eot?#iefix') format('embedded-opentype'),
+    	   url('k_font-light.svg#FontLight') format('svg'),
+         url('k_font-light.woff') format('woff'),
+         url('k_font-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontRegular2';
+    src: url('k_font-regular.eot');
+    src: url('k_font-regular.eot?#iefix') format('embedded-opentype'),
+    		 url('k_font-regular.svg#FontRegular') format('svg'),
+         url('k_font-regular.woff') format('woff'),
+         url('k_font-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontBold2';
+    src: url('k_font-bold.eot');
+    src: url('k_font-bold.eot?#iefix') format('embedded-opentype'),
+    	   url('k_font-bold.svg#FontBold') format('svg'),
+         url('k_font-bold.woff') format('woff'),
+         url('k_font-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+      font-family: 'FontRegular';
+      src: url('crc35-webfont.svg#FontRegular') format('svg');
+  }
+}
+
+@font-face {
+    font-family: 'FontBold';
+    src: url('crc65-webfont.eot');
+    src: url('crc65-webfont.eot?#iefix') format('embedded-opentype'),
+    	   url('crc65-webfont.svg#FontBold') format('svg'),
+         url('crc65-webfont.woff') format('woff'),
+         url('crc65-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+      font-family: 'FontBold';
+      src: url('crc65-webfont.svg#FontBold') format('svg');
+  }
+}

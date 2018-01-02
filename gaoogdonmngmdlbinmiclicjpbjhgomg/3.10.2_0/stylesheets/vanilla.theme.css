@@ -1,0 +1,159 @@
+
+/*
+ * @copyright
+ *   © 2012-2017 Jarosław Foksa
+ */
+
+/*****************************************************************************************************************/
+
+/**
+ * Roboto fonts
+ */
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/roboto-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/roboto-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/roboto-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/roboto-italic-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: italic;
+  src: url("../fonts/roboto-italic-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/roboto-italic-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/roboto-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Mono";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/roboto-mono-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Mono";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/roboto-mono-700.woff2") format("woff2");
+}
+
+/*****************************************************************************************************************/
+
+body {
+  display: flex;
+  cursor: default;
+  overflow: hidden;
+  background: #f0f0f0;
+  -webkit-user-select: none;
+}
+
+h2 {
+  width: 100%;
+  margin: 20px 0 8px 0;
+  padding: 0 20px;
+  opacity: 0.8;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+}
+h2[disabled] {
+  opacity: 0.5;
+}
+
+h3 {
+  width: 100%;
+  margin: 0px 0px 12px 0px;
+  padding: 0px;
+  opacity: 0.9;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+h3[disabled] {
+  opacity: 0.5;
+}
+
+h4 {
+  width: 100%;
+  margin: 0px 0px 8px 0px;
+  padding: 0px;
+  opacity: 0.85;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+h4[disabled] {
+  opacity: 0.5;
+}
+
+/*****************************************************************************************************************/
+
+x-button[skin="titlebar"] {
+  height: 30px;
+  padding: 0px 7px;
+  background: none;
+  border: none;
+}
+x-button[skin="titlebar"]:hover {
+  color: black;
+  background: rgba(0, 0, 0, 0.07);
+}
+x-button[skin="titlebar"][pressed] {
+  color: black;
+  background: rgba(0, 0, 0, 0.14);
+}
+
+x-button[skin="titlebar"] x-icon {
+  width: 14px;
+  height: 14px;
+  color: #5a5a5a;
+}
+
+x-doctab:focus {
+  box-shadow: none;
+}
+
+bx-toolsdock,
+bx-panelsdock {
+  --tooltip-border-radius: 0;
+}
+
+bx-paintorderswitch {
+  border-radius: 0;
+  --thumb-border-radius: 0;
+}
+
+bx-alignbuttons {
+  --button-toggled-background: hsl(var(--accent-color-h), var(--accent-color-s), var(--accent-color-l));
+  --button-pressed-background: hsl(var(--accent-color-h), var(--accent-color-s), calc(var(--accent-color-l) - 7%));
+}

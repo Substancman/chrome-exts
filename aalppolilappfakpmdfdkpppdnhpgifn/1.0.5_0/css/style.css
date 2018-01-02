@@ -1,0 +1,283 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+ body, html {
+   height: 100%;
+   width: 100%;
+   padding: 10px;
+   margin: 0;
+  }
+
+
+ body {
+  overflow-x: hidden;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  display: block;
+  /* background-color: #20232c; */
+ }
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  /* position: relative;
+  top: 0;
+  width: 250px;
+  margin: 0; */
+  padding: 0;
+  padding-right: 5%;
+  list-style: none;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: black;
+  /* background: rgba(255,255,255,0.2); */
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+      padding-left: 0;
+  }
+
+  #wrapper.toggled {
+      padding-left: 250px;
+  }
+
+  #sidebar-wrapper {
+      width: 0;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+      width: 250px;
+  }
+
+  #page-content-wrapper {
+      padding: 20px;
+      position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+      position: relative;
+      margin-right: 0;
+  }
+}
+
+/* D3 Properties */
+.tree {
+  border: 1px solid black;
+  background-color: #fff;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+.node circle {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.node text {
+  font: 15px sans-serif;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.link {
+  fill: none;
+  stroke: #009AB2;
+  stroke-width: 2px;
+}
+
+/* Sidebar properties */
+.panel {
+  background-color: white;
+}
+
+.store {
+  height: 200px;
+  width: 200px;
+  border: 1px solid red;
+}
+
+#button-container {
+  line-height: 10px;
+  font-size: 10px;
+  margin-left: 17px;
+  user-select: none;
+}
+
+#button-container label {
+  text-align: left;
+  display: inline-block;
+  text-indent: 0px;
+}
+
+#sliders-container {
+  padding-left: 5%;
+  text-align: right;
+  font-size: 10px;
+  max-width: 88px;
+  float: right;
+}
+
+#sliders-container p {
+  margin: 0 auto;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+
+.header-span {
+  float: right;
+}
+
+#state, #props {
+  font-family: Courier New, Courier, monospace;
+  color: black;
+}
+
+.range-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  outline: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #61dafb;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  background: #1abc9c;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  opacity: .9;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loader-header {
+  font-style: italic;
+}
+
+#loader-icon {
+  width: 200px;
+}
+
+#loader-container {
+  transform: translateY(60%);
+}
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 100%;
+}
+
+.breadcrumb {
+  font-size: 13;
+}
+
+#sidebar-reactsight {
+  /* border: 1px solid black; */
+  width: 100%;
+}
+
+h5, h2 {
+  font-size: 1.5em;
+  color: #222222;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 15px 0;
+}
+
+p {
+  color: #222222;
+  letter-spacing: -1px;
+  margin: 0 0 15px 0;
+}
+
+.col-md-8 {
+  padding-bottom: 15px;
+}
+
+#text-router {
+  font-weight: bold;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+#logoHeader {
+  width: 40px;
+}
+
+.svgnavbar {
+  position: absolute;
+  top: 0px;
+  right: 20;
+  z-index: 10;
+  background-color: white;
+  margin: 10px;
+}
+
+.icon-button {
+  margin: 4px 6px;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}

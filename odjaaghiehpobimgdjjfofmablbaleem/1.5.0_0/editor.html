@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html data-ng-app="Tabloid" data-ng-csp>
+<head>
+  <title>Chrome Sign - Editor</title>
+  <script type="text/javascript" src="js/third_party/moment.min.js"></script>
+  <script type="text/javascript" src="js/third_party/jquery.min.js"></script>
+  <script type="text/javascript" src="js/third_party/jquery-ui.custom.min.js"></script>
+  <script type="text/javascript" src="js/third_party/angular.js"></script>
+  <script type="text/javascript" src="js/third_party/ui-bootstrap-tpls-0.11.0.min.js"></script>
+  <script type="text/javascript" src="js/third_party/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="js/third_party/calendar.js"></script>
+
+  <script type="text/javascript" src="js/tabloid_module.js"></script>
+  <script type="text/javascript" src="js/storage.js"></script>
+  <script type="text/javascript" src="js/ui_tools.js"></script>
+  <script type="text/javascript" src="js/common_utils.js"></script>
+  <script type="text/javascript" src="js/editor.js"></script>
+  <script type="text/javascript" src="js/collections.js"></script>
+
+  <!-- Popup controllers -->
+  <script type="text/javascript" src="js/plugins_popup.js"></script>
+  <script type="text/javascript" src="js/new_event_popup.js"></script>
+  <script type="text/javascript" src="js/edit_schedule_popup.js"></script>
+  <script type="text/javascript" src="js/edit_collection_popup.js"></script>
+  <script type="text/javascript" src="js/schedule.js"></script>
+  <script type="text/javascript" src="js/editor_handlers.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="css/angular-csp.css"/>
+  <link rel="stylesheet" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="css/fullcalendar.min.css"/>
+  <link type="text/css" rel="stylesheet" href="css/calendar-customizations.css"/>
+  <link type="text/css" rel="stylesheet" href="css/buttons.css"/>
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="full-window" data-ng-controller="EditorController as editor">
+
+  <!-- Scheduler -->
+  <div data-ng-show="editor.currentView == 'schedule'" data-ng-controller="ScheduleController as scheduleController" class="full-window main-window">
+    <div class="headerbar">
+      <div class="logo headerbar-item"></div>
+      <div class="title headerbar-item">Chrome Sign Builder - Schedule</div>
+      <div class="settings headerbar-item dropdown action-menu">
+        <button class="dropdown-toggle"><i class="fa fa-cog"></i></button>
+        <ul class="dropdown-menu settingsmenu">
+          <li>
+            <a href="#" data-ng-click=""><i class="fa fa-gears"></i>&nbsp;&nbsp;Settings</a>
+            <a href="#" data-ng-click="scheduleController.openPluginsPopup()"><i class="fa fa-cube"></i>&nbsp;&nbsp;Plugins</a>
+            <hr>
+            <a href="#" data-ng-click=""><i class="fa fa-heart-o"></i>&nbsp;&nbsp;About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-page">
+
+      <!-- sidebar -->
+      <div class="sidebar">
+        <div class="topbar">
+          <div class="sidebar-content">
+
+            <!-- drop down -->
+            <span class="dropdown topbar-nav-item" on-toggle="toggled(open)">
+              <span class="dropdown-toggle">Schedule &#x25BE;</span>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" data-ng-click="editor.switchTo('collections')">Collections</a>
+                  <a class="active" a href="#">Schedule</a>
+                </li>
+              </ul>
+            </span>
+          </div>
+        </div>
+
+        <!-- sidebar-content -->
+        <div class="sidebar-content">
+
+          <!-- Add entry button -->
+          <div class="btn-group dropdown action-menu">
+            <button type="button" class="btn btn-action" data-ng-click="scheduleController.addEvent()"><i class="fa fa-plus-circle"></i> Entry</button>
+            <button type="button" class="btn btn-action dropdown-toggle" on-toggle="toggled(open)">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" data-ng-click="scheduleController.addSchedule()"><i class="fa fa-plus-circle"></i> Schedule</a></li>
+            </ul>
+          </div>
+
+          <!-- My schedules dropdown -->
+          <div class="sidebar-list-header">
+            <span data-ng-click="scheduleController.schedules_expanded=!scheduleController.schedules_expanded">
+              <div class="sidebar-list-header-zippy">
+                <i class="fa fa-caret-down" data-ng-show="scheduleController.schedules_expanded"></i>
+                <i class="fa fa-caret-right" data-ng-hide="scheduleController.schedules_expanded"></i>
+              </div>
+              My schedules
+            </span>
+            <span class="dropdown" on-toggle="toggled(open)">
+              <div class="more dropdown-toggle"><i class="fa fa-caret-down"></i></div>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" data-ng-click="scheduleController.addSchedule()"><i class="fa fa-plus-circle"></i> Create new schedule</a>
+                </li>
+              </ul>
+            </span>
+          </div>
+          <div class="sidebar-list" data-ng-show="scheduleController.schedules_expanded">
+            <div class="sidebar-list-item" data-ng-repeat="schedule in scheduleController.schedules track by $index" data-ng-click="scheduleController.scheduleSelected($index)">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-down"></i></div>
+              <div class="cal-square" data-ng-class="scheduleController.getScheduleClass($index)"></div>
+              <span class="sidebar-list-entry">{{schedule.name}}</span>
+              <span class="dropdown" on-toggle="toggled(open)">
+              <div class="more dropdown-toggle"><i class="fa fa-caret-down"></i></div>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" data-ng-click="scheduleController.editSchedule($index)"><i class="fa fa-pencil"></i> Edit settings</a>
+                  <a href="#" data-ng-click="scheduleController.deleteSchedule($index)"><i class="fa fa-times"></i> Delete schedule</a>
+                </li>
+              </ul>
+            </span>
+            </div>
+          </div>
+
+          <!-- Get help -->
+          <div class="sidebar-list-header" data-ng-hide="scheduleController.get_help_expanded">
+            <span data-ng-click="scheduleController.toggleHelpExpanded()">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-right"></i></div>
+              Help
+            </span>
+          </div>
+          <div class="sidebar-list-header" data-ng-show="scheduleController.get_help_expanded">
+            <span data-ng-click="scheduleController.toggleHelpExpanded()">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-down"></i></div>
+              Help
+            </span>
+          </div>
+          <div class="sidebar-list" data-ng-show="scheduleController.get_help_expanded">
+            <div class="note">Export your schedules and upload them to the <a
+                data-ng-href="{{scheduleController.CPANEL_URL}}"
+                target="_blank">management console</a> to distribute them to
+            your client screens.</div>
+            <div class="note">If you need help you can refer to the <a
+                href="https://support.google.com/chrome/a/answer/6180529" target="_blank">help center article</a> for this
+              product.</div>
+          </div>
+
+          <!-- Export -->
+          <div class="sidebar-list-header" data-ng-hide="scheduleController.export_expanded">
+            <span data-ng-click="scheduleController.export_expanded=!scheduleController.export_expanded">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-right"></i></div>
+              Export
+            </span>
+          </div>
+          <div class="sidebar-list-header" data-ng-show="scheduleController.export_expanded">
+            <span data-ng-click="scheduleController.export_expanded=!scheduleController.export_expanded">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-down"></i></div>
+              Export
+            </span>
+          </div>
+          <div class="sidebar-list" data-ng-show="scheduleController.export_expanded">
+            <button class="btn btn-green export-button" data-ng-click="scheduleController.exportPolicy()">
+              Export
+            </button>
+          </div>
+
+          <!-- Backup/Restore -->
+          <div class="sidebar-list-header" data-ng-hide="scheduleController.backup_expanded">
+            <span data-ng-click="scheduleController.backup_expanded=!scheduleController.backup_expanded">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-right"></i></div>
+              Backup/Restore
+            </span>
+          </div>
+          <div class="sidebar-list-header" data-ng-show="scheduleController.backup_expanded">
+            <span data-ng-click="scheduleController.backup_expanded=!scheduleController.backup_expanded">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-down"></i></div>
+              Backup/Restore
+            </span>
+          </div>
+          <div class="sidebar-list" data-ng-show="scheduleController.backup_expanded">
+            <div class="note">Use the "Backup" button to save all your schedules and collections and the
+              "Restore" button to load previously backed up settings.
+              Restoring the settings will not clear existing schedules or collections.
+            </div>
+            <button class="btn btn-green export-button" data-ng-click="scheduleController.exportData()">
+              Backup
+            </button>
+            <button class="btn btn-green export-button" data-ng-click="scheduleController.importData()">
+              Restore
+            </button>
+          </div>
+        </div><!-- !sidebar-content -->
+
+      </div><!-- !sidebar -->
+
+      <!-- main content -->
+      <div class="content">
+        <div id="calendar" class="calendar" data-ng-model="scheduleController.eventSources" calendar="scheduleCal" config="scheduleController.calendarConfig" ui-calendar="scheduleController.calendarConfig.calendar"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Collections -->
+  <div data-ng-show="editor.currentView == 'collections'" data-ng-controller="CollectionsController as collectionsController" class="full-window main-window">
+    <div class="headerbar">
+      <div class="logo headerbar-item"></div>
+      <div class="title headerbar-item">Chrome Sign Builder - Collections</div>
+    </div>
+    <div class="main-page">
+      <div class="sidebar">
+        <div class="topbar">
+          <div class="sidebar-content">
+
+            <!-- drop down -->
+            <span class="dropdown topbar-nav-item" on-toggle="toggled(open)">
+              <span class="dropdown-toggle">Collections &#x25BE;</span>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="active"a href="#">Collections</a>
+                  <a href="#" data-ng-click="editor.switchTo('schedule')">Schedule</a>
+                </li>
+              </ul>
+            </span>
+          </div>
+        </div>
+        <div class="sidebar-content">
+
+          <!-- Add entry button -->
+          <button type="button" class="btn btn-action" data-ng-click="collectionsController.addCollection()">
+            <i class="fa fa-plus-circle"></i> Collection
+          </button>
+          <div class="sidebar-list-header">
+            <span data-ng-click="collectionsController.collections_expanded=!collectionsController.collections_expanded">
+              <div class="sidebar-list-header-zippy">
+                <i class="fa fa-caret-down" data-ng-show="collectionsController.collections_expanded"></i>
+                <i class="fa fa-caret-right" data-ng-hide="collectionsController.collections_expanded"></i>
+              </div>
+              My collections
+            </span>
+            <span class="dropdown" on-toggle="toggled(open)">
+              <div class="more dropdown-toggle"><i class="fa fa-caret-down"></i></div>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" data-ng-click="collectionsController.addCollection()"><i class="fa fa-plus-circle"></i> Create new collection</a>
+                </li>
+              </ul>
+            </span>
+          </div>
+          <div class="sidebar-list" data-ng-show="collectionsController.collections_expanded">
+            <div class="sidebar-list-item" data-ng-repeat="collection in collectionsController.collections track by $index" data-ng-click="collectionsController.collectionSelected($index)">
+              <div class="sidebar-list-header-zippy"><i class="fa fa-caret-down"></i></div>
+              <div class="cal-square" data-ng-class="collectionsController.getCollectionClass($index)"></div>
+              <span class="sidebar-list-entry">{{collection.name}}</span>
+              <span class="dropdown" on-toggle="toggled(open)">
+              <div class="more dropdown-toggle"><i class="fa fa-caret-down"></i></div>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" data-ng-click="collectionsController.editCollection($index)"><i class="fa fa-pencil"></i> Edit settings</a>
+                  <a href="#" data-ng-click="collectionsController.deleteCollection($index)"><i class="fa fa-times"></i> Delete collection</a>
+                </li>
+              </ul>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <!-- content on right hand side -->
+        <div class="topbar">
+            <div class="collection-circle topbar-item" data-ng-class="collectionsController.getCollectionClass(collectionsController.selectedCollectionIndex)" data-ng-show="collectionsController.selectedCollection !== undefined"></div>
+            <span id="collection-label" class="topbar-item" data-ng-click="collectionsController.renameCollection()" data-ng-hide="collectionsController.selectedCollection == undefined || collectionsController.renaming">
+              {{collectionsController.selectedCollection.name}}
+            </span>
+            <input id="rename-collection-input" class="topbar-item" type="text" class="title_edit_box"
+               data-ng-show="collectionsController.renaming && collectionsController.selectedCollection !== undefined" data-ng-model="collectionsController.newCollectionName"
+               data-focus="collectionsController.renaming" data-ng-blur="collectionsController.doRenameCollection()"
+               data-ng-keyup="collectionsController.onRenameKeyPressed($event)">
+            <div class="topbar-item topbar-spacer"></div>
+            <button class="button btn-tool topbar-item"
+                    data-ng-hide="collectionsController.collections.length == 0" data-ng-click="collectionsController.addItem()">Add Content</button>
+            <button class="button btn-tool topbar-item"
+                    data-ng-click="collectionsController.deleteItems()" data-ng-hide="collectionsController.collections.length == 0" 
+                data-ng-disabled="!collectionsController.hasSelectedItems()">Delete</button>
+        </div>
+        <div class="collection-table" data-ng-show="collectionsController.selectedCollection !== undefined">
+          <table style="width:100%">
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>URL</th>
+              </tr>
+              <tr data-ng-repeat="item in collectionsController.selectedCollection.items track by $index">
+                <td class="collection-table-checkbox"><input type="checkbox" data-ng-model="collectionsController.itemsSelection[$index]"/></td>
+                <td>{{item.title}}</td>
+                <td>{{item.url}}</td>
+              </tr>
+              <tr data-ng-show="collectionsController.addingItem">
+                <td class="collection-table-checkbox"></td>
+                <td><input id="new-item-name-input" type="text" class="col_caption" placeholder="Name"
+                       data-ng-model="collectionsController.newItemName"
+                       data-focus="collectionsController.focusAddItemName" data-ng-keyup="onItemKeyPressed($event)"></td>
+                <td>
+                  <input id="new-item-url-input" type="text" class="col_caption" placeholder="URL"
+                    data-ng-model="collectionsController.newItemUrl"
+                    data-focus="collectionsController.focusAddItemUrl" data-ng-keyup="collectionsController.onItemKeyPressed($event)">
+                </td>
+              </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div><!-- !Collections -->
+
+
+<!-- Edit schedule popup driven by EditSchedulePopupController -->
+<script type="text/ng-template" id="edit-schedule-properties-popup">
+  <div class="modal-header">
+    <h3 class="modal-title">Edit Schedule</h3>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-4">
+        <label class="form-control-static">Name</label>
+      </div>
+      <div class="col-sm-8">
+        <input type="text" data-ng-model="editSchedulePopup.scheduleName" placeholder="Schedule Name" class="form-control"/>
+      </div>
+    </div>
+    <div class="row row_offset">
+      <div class="col-sm-4">
+        <label class="form-control-static">Screen orientation</label>
+      </div>
+      <div class="col-sm-8">
+        <select class="form-control" data-ng-model="editSchedulePopup.orientation" data-ng-options="orientation.name for orientation in editSchedulePopup.orientations"></select>
+      </div>
+    </div>
+    <div class="row row_offset">
+      <div class="col-sm-4">
+        <label class="form-control-static">Default URL</label>
+      </div>
+      <div class="col-sm-8">
+        <input type="text" data-ng-model="editSchedulePopup.defaultUrl" placeholder="Default URL" class="form-control"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button data-ng-enter="editSchedulePopup.onConfirmed()" class="btn btn-sm btn-success" data-ng-click="editSchedulePopup.onConfirmed()">
+      Save
+    </button>
+    <button class="btn btn-sm" data-ng-click="editSchedulePopup.onCancel()">
+      Cancel
+    </button>
+  </div>
+</script>
+
+<!-- Add item popup driven by NewEventPopupController -->
+<script type="text/ng-template" id="new-event-popup">
+  <div class="modal-header">
+    <h3 class="modal-title">Add new content</h3>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-1">
+        <label class="form-control-static">URL</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text"
+        data-ng-model="newEventPopup.contentUrl"
+        typeahead="item as item.title for item in newEventPopup.getTypeAheadItems($viewValue)"
+        typeahead-on-select="newEventPopup.typeAheadItemSelected($item, $model, $label)"
+        placeholder="URL"
+        class="form-control"/>
+      </div>
+      <div class="col-sm-1">
+        <label class="form-control-static">Zone</label>
+      </div>
+      <div class="col-sm-3">
+        <select data-ng-model="newEventPopup.zone" data-ng-options="zone.name for zone in newEventPopup.zones" data-ng-change="newEventPopup.onZoneChanged()" class="form-control"></select>
+      </div>
+      <div class="col-sm-3 no_left_padding no_right_padding">
+        <a data-ng-click="newEventPopup.onShowSizes()" data-ng-show="newEventPopup.showSizeLink"><label class="form-control-static">size</label></a>
+            <span data-ng-show="newEventPopup.showSizeEditor">
+              <input type="text" placeholder="px/%" data-ng-model="newEventPopup.zoneWidth" class="form-control multi_edit_short"/>x
+              <input type="text" placeholder="px/%" data-ng-model="newEventPopup.zoneHeight" class="form-control multi_edit_short"/>
+            </span>
+      </div>
+    </div>
+    <div class="row row_offset" data-ng-show="newEventPopup.allDayEvent">
+      <div class="col-sm-12 no_right_padding">
+        <input type="checkbox" data-ng-model="newEventPopup.showForever" data-ng-change="newEventPopup.onShowForeverChanged()"/>
+        <label class="form-control-static">Show forever</label>
+      </div>
+    </div>
+    <div class="row row_offset" data-ng-hide="newEventPopup.showAdvancedSettings">
+      <div class="col-sm-12">
+        <a data-ng-click="newEventPopup.onShowAdvancedSettings()" ><label class="form-control-static">Advanced...</label></a>
+      </div>
+    </div>
+    <!-- Advanced settings -->
+    <div data-ng-show="newEventPopup.showAdvancedSettings">
+      <div class="row row_offset" data-ng-hide="newEventPopup.showForever">
+        <div class="col-sm-3">
+          <label class="form-control-static">Content duration</label>
+        </div>
+        <div class="col-sm-9">
+          <input type="number" min="1" max="99999" data-ng-model="newEventPopup.duration" placeholder="min" class="form-control multi_edit_long" style="width: 80px; display: inline"/>
+          <label class="form-control-static">minutes</label>
+        </div>
+      </div>
+      <div class="row row_offset">
+        <div class="col-sm-4 no_right_padding">
+          <input type="checkbox" data-ng-model="newEventPopup.autoReload" />
+          <label class="form-control-static">Automatically reload url</label>
+        </div>
+        <div class="col-sm-8 no_left_padding" data-ng-show="newEventPopup.autoReload">
+          <label class="form-control-static">every</label>
+          <input type="number" min="1" max="3600" data-ng-model="newEventPopup.autoReloadDelay" data-ng-show="newEventPopup.autoReload" class="form-control multi_edit_long">
+          <label class="form-control-static">seconds</label>
+        </div>
+      </div>
+      <div class="row row_offset" data-ng-hide="newEventPopup.showForever">
+        <div class="col-sm-1">
+          <label class="form-control-static">Begin</label>
+        </div>
+        <div class="col-sm-5">
+          <input type="date" data-ng-model="newEventPopup.beginAsDate" class="form-control"/>
+        </div>
+        <div class="col-sm-5">
+          <input type="time" data-ng-model="newEventPopup.beginTimeAsDate" class="form-control"/>
+        </div>
+      </div>
+      <div class="row row_offset" data-ng-hide="newEventPopup.showForever">
+        <div class="col-sm-1">
+          <label class="form-control-static">Repeat</label>
+        </div>
+        <div class="col-sm-5">
+          <select data-ng-model="newEventPopup.periodicity" data-ng-options="period.name for period in newEventPopup.periodicities"
+              data-ng-change="newEventPopup.onPeriodicityChanged()" class="form-control"></select>
+        </div>
+        <div class="col-sm-4 no_right_padding" data-ng-show="newEventPopup.showRepeatIndefinitely">
+          <label class="form-control-static"><input type="checkbox" data-ng-click="newEventPopup.onRepeatIndefinitely()" data-ng-model="newEventPopup.repeatIndefinitely" data-ng-change="newEventPopup.onPeriodicityChanged()"/>&nbsp;Repeat indefinitely</label>
+        </div>
+      </div>
+      <div class="row row_offset" data-ng-show="newEventPopup.showEndTimeControls">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-1">
+          <label class="form-control-static">until</label>
+        </div>
+        <div class="col-sm-5">
+          <input type="date" data-ng-model="newEventPopup.endAsDate" class="form-control"/>
+        </div>
+        <div class="col-sm-5">
+          <input type="time" data-ng-model="newEventPopup.endTimeAsDate" class="form-control"/>
+        </div>
+      </div>
+    </div>  <!-- Advanced settings -->
+  </div>
+  <div class="modal-footer">
+    <button data-ng-disabled="!newEventPopup.isInputValid()" data-ng-enter="newEventPopup.onConfirmed(false)" class="btn btn-sm btn-default" data-ng-click="newEventPopup.onConfirmed(false)">Save</button>
+    <button class="btn btn-sm btn-danger" data-ng-click="newEventPopup.onConfirmed(true)" data-ng-hide="newEventPopup.hideDelButton">Remove</button>
+    <button class="btn btn-sm" data-ng-click="newEventPopup.onClose()">Cancel</button>
+  </div>
+</script>
+
+<!-- Delete confirmation poput -->
+<script type="text/ng-template" id="delete-item-popup">
+  <div class="modal-header">
+    <h3 class="modal-title">Delete confirmation</h3>
+  </div>
+  <div class="modal-body">
+    Are you sure you want to delete this item(s)?
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-sm btn-danger" data-ng-click="$close('delete')">Delete</button>
+    <button class="btn btn-sm" data-ng-click="$dismiss('cancel')">Cancel</button>
+  </div>
+</script>
+
+<!-- Can't delete last schedule popup -->
+<script type="text/ng-template" id="delete-not-possible-schedule-popup">
+  <div class="modal-header">
+    <h3 class="modal-title">Delete confirmation</h3>
+  </div>
+  <div class="modal-body">
+    You cannot remove the last remaining schedule. Do you want to reset it
+    instead?
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-sm btn-danger" data-ng-click="$close('delete')">Reset</button>
+    <button class="btn btn-sm" data-ng-click="$dismiss('cancel')">Cancel</button>
+  </div>
+</script>
+
+<!-- Edit collection popup -->
+<script type="text/ng-template" id="edit-collection-properties-popup">
+  <div class="modal-header">
+    <h3 class="modal-title">Edit Collection</h3>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-1">
+        <label class="form-control-static">Name</label>
+      </div>
+      <div class="col-sm-11">
+        <input type="text" data-ng-model="editCollectionPopup.collection_name" placeholder="Collection Name" class="form-control"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-sm btn-success" data-ng-click="editCollectionPopup.onConfirmed()">Save</button>
+    <button class="btn btn-sm" data-ng-click="editCollectionPopup.onCancel()">Cancel</button>
+  </div>
+</script>
+
+<!-- Plugins popup -->
+<script type="text/ng-template" id="plugins-popup">
+  <div class="modal-header">
+    <h3 class="modal-title"><i class="fa fa-cubes"></i> Plugins</h3>
+  </div>
+  <div class="modal-body">
+  <h3>Connected plugins:</h3>
+  <ul class="pluginList">
+  <li data-ng-repeat="plugin in pluginsPopup.pluginInfos"><b><i class="fa fa-cube"></i> {{plugin.name}}</b> <i class="fa fa-arrows-h"></i> <span class="connectionType">{{plugin.connectionType}}</span></li>
+  </ul>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-sm btn-success" data-ng-click="pluginsPopup.onConfirmed()">OK</button>
+  </div>
+</script>
+
+</body>
+</html>

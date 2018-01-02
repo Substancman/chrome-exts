@@ -1,0 +1,74 @@
+@import url("fonts/fonts.css");
+
+html, body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	line-height: 1.4;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#proxy_auth{
+	
+	width: 350px;
+	margin: auto;
+	margin-top: 60px;
+	min-width: 350px;
+}
+
+#proxy_auth .title{
+	font-size: 20px;
+	margin: auto;
+	text-align: center;
+}
+
+#proxy_auth .form{
+	
+	margin-top:20px;
+
+	
+	
+}
+
+#proxy_auth .data{
+	margin: auto;
+	width: 250px;
+	max-width: 100%;
+}
+
+#proxy_auth .field{
+	margin-top: 10px;
+}
+
+#proxy_auth .input {
+	margin-top: 5px;
+}
+
+#proxy_auth .input input{
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+#proxy_auth .submit{
+	margin: auto;
+	width: 130px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;	
+	color: #ffffff;
+	font-weight: bold;
+	background-color: #3B5999;
+	clear: both;
+	margin-top: 25px;
+	cursor: pointer;
+	border: none;
+	display: block;
+}
+
+
+

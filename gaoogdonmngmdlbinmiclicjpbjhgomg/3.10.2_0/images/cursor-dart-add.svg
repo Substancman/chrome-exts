@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="28px" height="40px" viewBox="0 0 28 40" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" xmlns="http://www.w3.org/2000/svg">
+  <g id="Layer-2">
+    <path d="M5,25C5,29.97 9.03,34 14,34C18.97,34 23,29.97 23,25C23,20.029 18.97,16 14,16C9.03,16 5,20.029 5,25Z" style="fill:url(#_Linear1);fill-rule:nonzero;"/>
+    <path d="M4,18.422L4,2.407L15.591,14.026L8.55,14.026L8.399,14.15L4,18.422Z" style="fill:white;fill-rule:nonzero;"/>
+    <path d="M18,24L15,24L15,21C15,20.448 14.552,20 14,20C13.448,20 13,20.448 13,21L13,24L10,24C9.448,24 9,24.448 9,25C9,25.552 9.448,26 10,26L13,26L13,29C13,29.552 13.448,30 14,30C14.552,30 15,29.552 15,29L15,26L18,26C18.552,26 19,25.552 19,25C19,24.448 18.552,24 18,24" style="fill:white;"/>
+    <path d="M5,4.814L5,16.002L7.969,13.136L8.129,12.997L13.165,12.997L5,4.814Z" style="fill:black;fill-rule:nonzero;"/>
+  </g>
+  <defs>
+    <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,18,-18,0,14,16)">
+      <stop offset="0" style="stop-color:rgb(92,211,49);stop-opacity:1"/>
+      <stop offset="1" style="stop-color:rgb(7,140,4);stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+</svg>

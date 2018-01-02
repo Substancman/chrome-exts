@@ -1,0 +1,21 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "kproxyagent.js", "kproxyagentbridge.js", "util.js", "forge.bundle.js" ]
+      }
+   },
+   "description": "KProxy Background App",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "32": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi5P6JUlGEKtD9KCLBFNjTEGg3asVlvPIPIta2WiG4oY3eqdpNipkus9mNymQCZv6P+cbQ/kpOdwKophFYc13/JUxkw8AR5yr2/HnEUNypNawmjktW3CDxUpa67Oja26w8EVlNxA5qOrmUkGvLBtY23hD+xDd4tcjK+PuSVSfS6nKXfBYVQp2PSPsztJWosdZ1jc3s14oadzpeb4m7SoVepNGCmb8VTQzOB0T30ot5nS5aWc+KVXIN4BqHudsqOPp4E0XaxCV/++w/aWaPPpCQND4Gg7CKuDN2BM8GMgmgUJaBo12Ur+xfY0kyAcdDLvAoJY16o1iTUG9alLsuUt6UQIDAQAB",
+   "name": "KProxy Background App",
+   "permissions": [ {
+      "socket": [ "tcp-listen", "tcp-connect:*:*" ]
+   }, "notifications", "system.network" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.1"
+}

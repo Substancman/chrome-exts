@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html data-ng-app="Tabloid" data-ng-csp>
+  <head>
+    <title>Chrome Sign</title>
+    <script type="text/javascript" src="js/third_party/sha1.js"></script>
+    <script type="text/javascript" src="js/third_party/moment.min.js"></script>
+    <script type="text/javascript" src="js/third_party/jquery.min.js"></script>
+    <script type="text/javascript" src="js/third_party/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="js/third_party/angular.js"></script>
+    <script type="text/javascript" src="js/third_party/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script type="text/javascript" src="js/third_party/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="js/third_party/calendar.js"></script>
+
+    <script type="text/javascript" src="js/tabloid_module.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript" src="js/ui_tools.js"></script>
+    <script type="text/javascript" src="js/common_utils.js"></script>
+    <script type="text/javascript" src="js/viewer.js"></script>
+    <script type="text/javascript" src="js/viewer_handlers.js"></script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body data-ng-controller="ViewerController as viewer">
+    <webview id="fs-content" data-ng-src="{{viewer.sources.fs}}" data-reload="viewer.contentRefreshTimeout.fs" autosize="on"
+             style="position: absolute; width: 1000px; height: 700px; z-index: 2"></webview>
+    <!-- TODO(pastarmovj): Replace the style attribute with an Angular directive. -->
+    <webview id="ul-content" data-ng-src="{{viewer.sources.ul}}" data-reload="viewer.contentRefreshTimeout.ul"
+        style="position: absolute; top: {{viewer.contentYOffset.ul ? viewer.contentYOffset.ul : '50px'}};
+           left: {{viewer.contentXOffset.ul ? viewer.contentXOffset.ul : '50px'}};
+           width: {{viewer.contentWidth.ul ? viewer.contentWidth.ul : '30%'}};
+           height: {{viewer.contentHeight.ul ? viewer.contentHeight.ul : '30%'}};
+           z-index: {{viewer.showContent.ul ? 5 : 0}}"></webview>
+    <webview id="ur-content" data-ng-src="{{viewer.sources.ur}}" data-reload="viewer.contentRefreshTimeout.ur"
+        style="position: absolute; top: {{viewer.contentYOffset.ur ? viewer.contentYOffset.ur : '50px'}};
+           right: {{viewer.contentXOffset.ur ? viewer.contentXOffset.ur : '50px'}};
+           width: {{viewer.contentWidth.ur ? viewer.contentWidth.ur : '30%'}};
+           height: {{viewer.contentHeight.ur ? viewer.contentHeight.ur : '30%'}};
+           z-index: {{viewer.showContent.ur ? 5 : 0}}"></webview>
+    <webview id="ll-content" data-ng-src="{{viewer.sources.ll}}" data-reload="viewer.contentRefreshTimeout.ll"
+        style="position: absolute; bottom: {{viewer.contentYOffset.ll ? viewer.contentYOffset.ll : '50px'}};
+        left: {{viewer.contentXOffset.ll ? viewer.contentXOffset.ll : '50px'}};
+        width: {{viewer.contentWidth.ll ? viewer.contentWidth.ll : '30%'}};
+        height: {{viewer.contentHeight.ll ? viewer.contentHeight.ll : '30%'}};
+        z-index: {{viewer.showContent.ll ? 5 : 0}}"></webview>
+    <webview id="lr-content" data-ng-src="{{viewer.sources.lr}}" data-reload="viewer.contentRefreshTimeout.lr"
+        style="position: absolute; bottom: {{viewer.contentYOffset.lr ? viewer.contentYOffset.lr : '50px'}};
+        right: {{viewer.contentXOffset.lr ? viewer.contentXOffset.lr : '50px'}};
+        width: {{viewer.contentWidth.lr ? viewer.contentWidth.lr : '30%'}};
+        height: {{viewer.contentHeight.lr ? viewer.contentHeight.lr : '30%'}};
+        z-index: {{viewer.showContent.lr ? 5 : 0}}"></webview>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="css/popup.css" rel="stylesheet" type="text/css">	
+
+
+	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/popup.js"></script>
+	
+  </head>
+  <body>
+  	
+  	
+  	<div id="main">
+	    <div id="menu">
+	    	
+	    	<div id="servers_tab" class="back_button wobble_horizontal removable">
+    			<img src="img/arrow_back.png" id="servers_icon">
+	    		<div class="text">back</div>
+    			<!--<img src="img/servers_on.png" id="servers_icon">-->
+				</div>
+ 				
+	    	<div id="back_settings_button" class="back_button wobble_horizontal removable">
+    			<img src="img/arrow_back.png" id="servers_icon">
+	    		<div class="text">back</div>
+    			<!--<img src="img/servers_on.png" id="servers_icon">-->
+			</div>			    	
+							    	
+	    	<div id="disconnect" class="removable">
+	    		<img src="img/stop_button.png">
+	    		<!-- <div class="text">Stop KProxy</div>-->
+	    	</div>
+	    	
+	    	<div id="help" class="wobble">
+	    		<img src="img/help.png">
+	    		<div class="text">help</div>	    		
+	    	</div>
+<!-- 	    	<div id="settings" class="wobble">
+	    		<img src="img/settings.png">
+	    		<div class="text">settings</div>
+	    	</div>	 -->
+	    	<div id="account_button" class="wobble removable">
+	    		<img src="img/account.png">
+	    		<div class="text">account</div>	    		
+	    	</div>    	
+	    </div>
+	    <div id="title">
+	    	<img src="img/kproxy.png" id="logo">
+	    	<!--<div id="upgrade_logo">UPGRADE TO PRO</div>-->
+	    	<div class="clear"></div>
+	    </div>
+	    <!-- <div id="tabs" class="removable">
+	    	<div id="tabs_container">
+		    	<div class="tab on" id="servers_tab">
+		    		<div class="tab_container">
+			    		<div class="text">
+			    			servers
+			    		</div>
+			    		<div class="icon">
+			    			<img src="img/servers_on.png" id="servers_icon">
+			    		</div>
+			    	</div>
+		    	</div>
+		    	<div class="tab" id="account_tab">
+		    		<div class="tab_container">
+			    		<div class="text">
+			    			account
+			    		</div>
+			    		<div class="icon">
+			    			<img src="img/account.png" id="account_icon">
+			    		</div>
+			    	</div>	    		
+		    	</div>
+		    </div>
+	    </div> -->
+	    
+	    <div id="start" class="removable">
+	    	<img class="pulse" src="img/start_button.png">
+	    	<div class="text">
+	    		Start kproxy
+	    	</div>
+	    </div>
+	    
+   	    <div id="loading_waiting" class="removable">
+   		    <div class="connect connect_off" id="loading_waiting_text">
+		    	[ Connecting to KProxy servers ]
+		    </div>	    
+	    	<div class="loading_waiting">This may take a moment...</div>
+	    	<div class="loading_task" id="loading_task">Loading...</div>
+	    	<div class="loading_icon">
+	    		<img src="img/loading.gif">
+	    	</div>
+	    	
+	    </div>
+	    
+	    <div id="loading_proxy" class="removable">
+   		    <div class="connect connect_off" id="loading_waiting_text">
+		    	[ Connecting to KProxy servers ]
+		    </div>	    
+	    	<div class="loading_waiting">KProxy is waiting for your network<br>proxy credentials...</div>
+
+	    	<div class="loading_icon">
+	    		<img src="img/loading.gif">
+	    	</div>
+	    	<div><br><div class="button_white_large active_button" id="loading_proxy_insert_credentials">Insert credentials</div></div>
+	    	
+	    </div>
+
+	    
+	    <div id="error" class="removable">
+
+	    	<div class="error_desc removable" id="error_connection">
+	    		<div class="error_oops">oops!</div>
+	    		<div class="error_logo"><img src="img/error.png"></div>
+	    		<div class="error_title">[ <span>Connection Error</span> ]</div>
+	    		<div class="div_solution"><span class="solution">solution 1:</span> Check your internet connection</div>
+	    		<div class="gap"></div>
+	    		
+	    		<div class="div_solution"><span class="solution">solution 2:</span> Problem with Company Proxy</div>
+	    		<div><div class="button_white_large active_button" id="error_connection_proxy_button">Bypass Proxy <img src="img/settings.png"></div></div>
+
+	    		<div class="div_solution" style="padding-top: 10px"><span class="solution">solution 3:</span> Retry server search</div>
+	    		<div><div class="button_white_large active_button" id="error_server_search_button">Retry Search <img src="img/search.png"></div></div>
+	    		
+	    		
+	    	</div>
+	    	<div class="error_desc removable" id="error_install">
+	    		<div class="error_oops">Finish installation</div>
+	    		<div class="error_logo"><img src="img/install_error.png"></div>
+	    		<div class="error_title">[ <span><b>KProxy App</b> not installed!</span> ]</div>
+	    		<div><span class="solution">solution:</span> download and install KProxy App<br>from the Chrome Web Store</div>
+	    		<div><img src="img/arrow_down.png" class="error_arrow"></div>
+	    		<div><img src="img/chrome_install_button.png" class="error_solution_button" id="error_install_button"></div>
+	    	</div>
+	    	<div class="error_desc removable" id="error_disabled">
+	    		<div class="error_oops">oops!</div>
+	    		<div class="error_logo"><img src="img/error.png"></div>
+	    		<div class="error_title">[ <span>KProxy App disabled!</span> ]</div>
+	    		<div><span class="solution">solution:</span> enable KProxy App<br>at Chrome Extensions</div>
+	    		<div><img src="img/arrow_down.png" class="error_arrow"></div>
+	    		<div><img src="img/chrome_extensions_button.png" class="error_solution_button" id="error_chrome_extensions_button"></div>
+	    	</div>
+	    	<div class="error_desc removable" id="error_login">
+	    		<div class="error_oops">oops!</div>
+	    		<div class="error_logo"><img src="img/error.png"></div>
+	    		<div class="error_title">[ <span>Login error!</span> ]</div>
+	    		<div><span class="solution">solution:</span> try to login again</div>
+	    		<div><img src="img/arrow_down.png" class="error_arrow"></div>
+	    		<div><img src="img/error_login_button.png" class="error_solution_button" id="error_login_button"></div>
+	    	</div>
+
+
+
+	    </div>
+	    
+	    <div id="login" class="removable">
+	    	<div class="title">
+	    		Login
+	    	</div>
+	    	<div class="input">
+	    		<input type="text" placeholder="User" id="login_user">
+	    	</div>
+	    	<div class="input">
+	    		<input type="password" placeholder="Password" id="login_passwd">
+	    	</div>
+	    	<div class="submit">
+	    		<div class="blue_button active_button_opacity" id="login_button">login</div>
+	    	</div>
+	    	<div class="clear"></div>
+			<div id="login_forgot" class="active_button_opacity">
+				Forgot password?
+			</div>
+			<div id="login_new" class="active_button_opacity">
+				Create a new KProxy account
+			</div>
+	    </div>
+	    
+	    <div id="proxy_settings" class="removable">
+	    	<div class="title">
+	    		Settings
+	    	</div>
+	    	<div class="row">
+	    		<input type="radio" name="settings_proxy_option" value="auto" checked >Automatically detect settings
+	    	</div>
+	    	<div class="text">
+	    		Are you under an Internet proxy? (At work, university...)<br>
+	    		Fill your system proxy configuration here. [ <span id="proxy_settings_help">need help?</span> ]
+	    	</div>
+	    	<div class="row">
+	    		<input type="radio" name="settings_proxy_option" value="pac">Use automatic configuration script<br>
+	    		<input type="text" id="settings_pac_file" class="tooltip" disabled>
+	    	</div>
+	    	<div class="row">
+	    		<input type="radio" name="settings_proxy_option" class="settings_proxy_option" value="proxy">Use a proxy server<br>
+	    		<span>Address: </span><input type="text" id="settings_proxy_address" class="tooltip" disabled>
+	    		<span>Port: </span><input type="text" id="settings_proxy_port" class="tooltip" disabled> 	    		
+	    	</div>
+	    	<div class="submit">
+	    		<div class="blue_button active_button_opacity" id="settings_cancel_button">Cancel</div>
+	    		<div class="blue_button active_button_opacity" id="settings_ok_button">Ok</div>
+	    	</div>
+	    	<div class="clear"></div>
+
+
+	    	
+	    </div>
+
+	    <div id="connection_state" class="connect connect_off removable">
+	    	[ Disconnected ]
+	    </div>	    
+	    
+	    	<div id="servers" class="removable">
+		   		<div id="upgrade_button">
+			  			<img src="img/upgrade.png">
+			  	</div>
+	    	</div>
+	  	</div>
+   
+	 </div>
+	 <div id="account" class="removable">
+		<div id="user">
+			<div id="user_name">
+				kanowins
+			</div>
+			<div id="logout" class="active_button_opacity">
+				logout<img src="img/logout.png">
+			</div>
+		</div>
+		
+		<div id="usage_layer">
+			<div id="account_login">
+				<div class="button_white active_button" id="account_login_button">							
+					login
+					<img src="img/account_button.png">
+				</div>
+				<div class="account_create" id="account_create">
+					don't you have a KProxy account? <span class="active_button_opacity">create one</span>
+				</div>
+			</div>
+			
+			<div id="usage_container">
+				
+				<div class="title_account free" id="title_account">
+					<img src="img/free_acount_title_icon.png" class="title_account_icon"><span class="bold">FREE</span> account
+				</div>
+				<div class="usage_elements_container usage_free">
+					<div class="usage_element">								
+						<img src="img/time.png">
+						<div class="text_unlimited">unlimited</div>
+					</div>
+					<div class="usage_element" id="usage_transfer">
+						<img src="img/transfer.png">
+						<div class="text" id="usage_transfer_text">750MB transferred</div>
+						<div class="bar_container">
+							<div class="bar" style="width: 68%"> </div>
+						</div>
+					</div>				
+				</div>	
+				
+				<div id="upgrade_container">
+					<img src="img/star_gold.png" class="pro_button_decorator">
+					<div class="upgrade_button">
+						upgrade to <span class="bold_upgrade_button">PRO</span>					
+					</div>	
+					<img src="img/star_gold.png" class="pro_button_decorator">				
+				</div>
+				
+				
+			</div>
+			 
+			 
+	 		
+	 		<div id="usage_container_pro">
+				<div class="title_account pro">
+					<img src="img/pro_hat.png" class="title_account_icon"><span class="bold">PRO</span> account
+				</div>
+				
+				<div class="usage_elements_container usage_pro">
+					<div class="usage_element">								
+						<img src="img/time.png">
+						<div class="text_unlimited">unlimited</div>
+					</div>
+					<div class="usage_element">
+						<img src="img/transfer.png">
+						<div class="text_unlimited">unlimited</div>
+					</div>				
+				</div>	
+				
+				<div id="credits_container">
+					<div class="credits" id="credits_left">300 <span>credits left</span></div>
+					<div class="get_more_credits">get more credits<img src="img/blue_hat.png"></div>
+				</div>
+	
+				
+				 	
+			 </div>
+		</div>	 
+	</div>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="css/help.css" rel="stylesheet" type="text/css">	
+	<link rel="shortcut icon" href="favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  	<div id="main">
+  		<div id="title">
+	    	<img src="img/kproxy.png" id="logo">
+	    	<div class="clear"></div>
+	    </div>
+	    <div id="title_help">Extension Help</div>
+  		<div id="index">
+<!--    			<div class="title1"><a href="#install">1. Installation</a></div>
+  			<div class="title2"><a href="#install_plugin">1.1 Install KProxy Extension</a></div>
+  			<div class="title2"><a href="#install_portable">1.2 Install KProxy Browser (only under Windows)</a></div>
+  			
+  			<div class="title1"><a href="#settings">2. KProxy Settings</a></div>
+  			<div class="title2"><a href="#settings_configure">2.1 Configure KProxy Settings</a></div>
+  			<div class="title2"><a href="#settings_tools">2.2 Tools to configure KProxy Settings with Google Chrome</a></div>
+  			<div class="title2"><a href="#settings_computer">2.3 Getting how your computer is connecting to Internet</a></div>-->
+  			
+  			<div class="title1"><a href="#start">1. Start KProxy</a></div>
+  			
+  			<div class="title1"><a href="#servers">2. Servers</a></div>
+  			
+  			<div class="title1"><a href="#account">3. Account</a></div>
+  			
+  			<div class="title1"><a href="#incognito">4. Configure incognito mode to use KProxy Extension</a></div>
+  			
+  			<div class="title1"><a href="#kproxy_agent">5. Bypass a company filter with KProxy Agent</a></div>
+  			<div class="title2"><a href="#kproxy_agent_windows">5.1 Install and execute KProxy Agent on Windows</a></div>
+  			<div class="title2"><a href="#kproxy_agent_linux">5.2 Install and execute KProxy Agent on Linux or Mac</a></div>
+  			<div class="title2"><a href="#kproxy_agent_settings">5.3 Configure manually KProxy Agent settings</a></div>
+  			<div class="title2"><a href="#kproxy_agent_check">5.4 Have I a company filter?</a></div>
+  			<div class="title2"><a href="kproxy_agent_external">5.5 Why I need an external program?</a></div>
+  			
+  			
+  			
+  			<div class="title1"><a href="#programs">6. Configuring other programs to use KProxy servers</a></div>
+  			
+  			<div class="title1"><a href="#throubleshooting">7. Throubleshooting</a></div>
+  			<div class="title2"><a href="#throubleshooting_censored">7.1 I still have pages censored</a></div>
+  			<div class="title2"><a href="#throubleshooting_server">7.2 KProxy Extension can't connect to any server</a></div>
+  			<div class="title2"><a href="#throubleshooting_server">7.3 I have a PRO account but I can't access PRO servers</a></div>
+  			
+  			
+  			
+  			<div class="title1"><a href="#contact">8. Contact us</a></div>
+  			
+  			
+  			
+  			
+  			
+  		</div>
+  		
+  		<div id="text">
+  			<p>KProxy Extension is the definitive weapon against censorship. Bypass any filter and protect your identity with just one click. 
+  			It is extremely easy to use and it works great even if you are under an Internet proxy (at work, university, library, etc). 
+  			Also, KProxy Extension can be used by any program or device that can connect to Internet through a proxy.</p>
+ 
+			
+			<div class="title1"><a name="start">1. Start KProxy</a></div>
+			<div class="list">
+				<p>You have installed KProxy Extension. Notice that you have a new icon, a gray hat, on the top right corner. KProxy is turned off at this moment. To start it, just click on the hat that will show a popup and then the big green button:</p>
+				<img class="screenshot" src="img/help/start.png">
+				
+				<p>Now, KProxy Extension will find automatically a server for you, 
+				this may take a few seconds. Once connected you will find a screen like this:</p>
+				
+				<img class="screenshot" src="img/help/servers.png">
+				
+				<p>Now, your browser is browsing under KProxy Servers! :) Notice that you are connected to the location on green. You can change your location clicking on any of the other locations.</p>
+				<p>If you get a screen like this, then probably you are under a company filter, please go to <a href="#settings">Bypass a company filter with KProxy Agent</a> and follow the instructions.</p>
+				
+				<img class="screenshot" src="img/help/connection_error.png">
+			</div>
+			
+			
+			<div class="title1"><a name="servers">2. Servers</a></div>
+			<div class="list">
+				<p>When you change to any available location, KProxy Extension will pick automatically a server for you, but also you can select a single server. Just click on the button that is on the right of the location, all servers for that location will be shown. You can change to any of them with just one click on the connect button.
+					You may notice that you can't connect at this moment with PRO servers. You need a PRO account in order to access to them.</p>
+				
+				<img class="screenshot" src="img/help/showservers.png">
+				
+				<p>A server could be temporarily down or even banned, in that case, when you click on the connect button you will get a screen like 
+					this:</p>
+					
+				<img class="screenshot" src="img/help/banned.png">
+				
+				<p>Here you can mark the server as banned, if you are sure the server will not work anymore in your network. You can recover the
+					server at any time.</p>
+				<p>Notice you also have a button to start an automatic server search to find an available server. Let KProxy do the work for you!</p>
+			</div>
+			
+			<div class="title1"><a name="account">3. Account</a></div>
+			<div class="list">
+				<p>If you click on the account button, you will see the state of your account. If you haven't access to PRO servers, you will find 
+					how much time you have browsed and how much data you have transferred. For using PRO servers and unlimited access, you need 
+					a KProxy Account and purchase the PRO service.</p>
+					
+				<img class="screenshot" src="img/help/account_login.png">
+					
+				<p>Once purchased the PRO account, you have to log in it on KProxy Extension. The account screen will show the next information:</p>
+				
+				<img class="screenshot" src="img/help/pro.png">
+				
+				<p>The activation of your PRO account may take a few minutes, but probably it will be activated instantly. If you have any problem, you can
+					send us an email to <b><i>support@gmail.com</i></b> and we will attend you ASAP.</p>
+				<p>Remember that the PRO account gives to you unlimited access to fast servers, also, you help us to keep this service reliable for everyone</p>
+			</div>
+
+			<div class="title1"><a name="incognito">4. Configure incognito mode to use KProxy Extension</a></div>
+			<div class="list">
+				<p>Google Chrome doesn't allow to use extensions in incognito mode by default. If you want to use KProxy extension in incognito mode 
+					you have to grant access to it.</p> 
+				<div class="list">
+					<p>- Open a new tab on your Google Chrome and write this on the browser bar <i>chrome://extensions/</i>, you will get the next screen:</p>
+					<p>- You will find there <i>KProxy Extension</i></p>
+					<p>- Click on the <i>Allow in incognito</i> check of the KProxy Extension</p>
+				</div>
+				
+				<img class="screenshot" src="img/help/incognito.png">
+				<br><br>
+
+			</div>
+			
+			
+			<div class="title1"><a name="kproxy_agent" >5. Bypass a company filter with KProxy Agent</a></div>
+			<div class="list">
+				<p>You will need an <a href="#kproxy_agent_external">external program</a> to <a href="#kproxy_agent_check">bypass a company filter</a>.</p>
+				
+				
+				<div style="text-align: center">
+					<div style="display: inline-block; margin: auto">
+						<div class="download_agent">
+							<div class="download_agent_icon_text">
+								<img src="img/help/windows_icon.png">
+								<br>Windows
+							</div>
+		
+							<div class="download_agent_text">
+								Download KProxy Agent<br>
+								<a href="https://kproxy.com/download/kproxyagent_windows.zip"><img src="img/help/download_section_button.png"></a>
+							</div>
+							<div style="clear: both;"></div>
+		
+						</div>
+						<div style="display: inline-block; width: 40px"></div>
+						<div class="download_agent">
+							<div class="download_agent_icon_text">
+								<img src="img/help/crossplatform_icon.png">
+								<br>Mac / Linux
+							</div>
+		
+							<div class="download_agent_text">
+								Download KProxy Agent<br>
+								<a href="https://kproxy.com/download/kproxyagent_crossplatform.zip"><img src="img/help/download_section_button.png"></a>
+							</div>
+							<div style="clear: both;"></div>
+		
+						</div>
+					</div>
+				</div>
+				
+				
+				
+
+			</div>
+			
+			
+			
+			<div class="title2"><a name="kproxy_agent_windows">5.1 Install and execute KProxy Agent on Windows</a></div>
+			<div class="list">
+				<div class="list">
+					<p> STEP 1. <b>Unzip</b> it on any folder. Installation finised! :)</p>
+					<p> STEP 2. <b>Execute the <i>KProxyAgent.exe</i></b> program.</p>
+					<p> STEP 3. Start again the KProxy Extension <a href="#start">clicking on the green button</a>.</p>
+				</div>
+				<p>&nbsp;</p>
+				<p><i><b>WARNING:</b></i> Windows will ask to you to allow the program to open a local port the first time you use the program. You have to allow it to make it work.</p>
+				<p>And that is!. Now the KProxy Extension should bypass magically the company filter.
+				<p>It is a portable program, you can even save it on a pen drive and execute it anywhere</p>
+				
+			</div>
+			
+			<div class="title2"><a name="kproxy_agent_linux">5.2 Install and execute KProxy Agent on Mac/Linux</a></div>
+			<div class="list">
+				<div class="list">
+					<p> STEP 1. Unzip it on any folder.</p>
+					<p> STEP 2. You need to have installed at least <a href="https://www.java.com/download/">Java 8</a> to execute it.
+					<p> STEP 3. Open a Terminal window, go to the installation folder and execute  <i>sh KProxyAgent.sh</i>.</p>
+					<p> STEP 4. Start again the KProxy Extension <a href="#start">clicking on the green button</a>.</p>
+				</div>
+				<p>&nbsp;</p>				
+				<p>KProxy Agent will try to autoconfigure the proxy settings of your computer. If it doesn't work please go to <a href="#kproxy_agent_settings">Configure manually KProxy Agent settings</a>.</p>
+				<p>Once KProxy Agent is running 
+				and proxy settings are ok, the KProxy Extension should bypass magically the company filter. Just go to your browser and try to start KProxy Extension again.</p>
+			</div>
+			
+			<div class="title2"><a name="kproxy_agent_settings">5.3 Configure manually KProxy Agent settings</a></div>
+			<div class="list">
+				<p>Once started, KProxy Agent should configure the proxy settings automatically but you can do it manually if it doesn't work. Notice that once you have opened KProxy Agent you will find
+				a tray icon saying that KProxy Agent is running.<br><br>
+				
+				<img class="screenshot" src="img/help/agent_started.png"><br><br>
+				
+				Just double-click on it or right click and select "Change Proxy Settings". A new tab will be opened on your browser with KProxy Agent proxy 
+				settings configuration screen</p>
+				<img class="screenshot" src="img/help/settings.png">
+				<p>If you don't find the tray icon, or the tab never opened, don't panic. Just open a window on your browser and go to <a href="http://127.0.0.1:3333/kproxyagent.html">http://127.0.0.1:3333/kproxyagent.html</a><p>
+				<p>You will see how KProxy Agent autodetect your proxy settings, but you can change them manually and save them. You can back to autodetection on any time. If you need help on how to configure settings, keep reading
+				the next point.</p>			
+				
+			</div>
+			
+			<div class="title2"><a name="kproxy_agent_check">5.4 Have I a company filter?</a></div>
+			<div class="list">
+				<p>Companies, universities, libraries, etc have filters very often to ban arbitrarily Internet sites. The browser then is configured to use a local proxy to connect 
+				to Internet. You can get the information with easy with Google Chrome:</p>
+				
+				<div class="list">
+					<p>Open a new tab and copy this on the browser bar: <b><i>chrome://net-internals/#proxy</i></b>.</p>
+					<p>You will find this information under <i>Effective proxy settings</i>:</p>
+					
+					<div class="list">
+
+						<p><br>- Your browser uses DIRECT connections. No filter is configured.</p>
+						<p>&nbsp;&nbsp;&nbsp;<i><b>You don't need KProxy Agent.</b></i></p>						
+						
+						<img class="screenshot" src="img/help/direct.png">
+						
+						<p><br>- Your browser uses a filter configured with "PAC script: <i>url_to_pac_script</i>", that is, an automatic configuration script.</p>
+						<p>&nbsp;&nbsp;&nbsp;<i><b>You need KProxy Agent.</b></i></p>						
+						
+						<img class="screenshot" src="img/help/pac.png">
+						
+						<p><br>- Your browser uses a filter configured with "Proxy server: <i>address</i>:<i>port</i>".</p>
+						<p>&nbsp;&nbsp;&nbsp;<i><b>You need KProxy Agent.</b></i></p>		
+						
+						<img class="screenshot" src="img/help/proxy.png">
+						
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="title2"><a name="kproxy_agent_external">5.5 Why I need an external program?</a></div>
+			<div class="list">
+				<p>Long story made short: because APIs on Chrome and Firefox that supported this feature in past versions of KProxy Extension will be discontinued on 2018, so we have to move 
+				to an external program. It is sad, but we have to live with it.</p>
+				
+				<p>The good news are that KProxy Agent:</p>
+				<div class="list">
+					<p>- It is a portable program that doesn't need to be installed, just unzip and run. It can be executed even in a pen drive</p>
+					<p>- It works better on autodetection of proxy settings on every operating system than previous version based on Chrome and Firefox APIs</p>
+					<p>- It is far more efficient</p>
+				</div>				
+			</div>
+
+			
+			<div class="title1"><a name="programs">6. Configuring other programs to use KProxy servers</a></div>
+			<div class="list">
+				<p>KProxy Agent emulates an Internet proxy. Any program that can use Internet proxies, can connect to Internet using KProxy Extension. 
+					Other devices (in example a PS3 or a cell phone) that can configure a HTTP proxy   
+					can be configured to connect to Internet under KProxy servers.</p>
+				<p>For any program in your computer, configure the proxy (<i>address</i>:<i>port</i>)</p>
+					<p class="list"><i><b>127.0.0.1:3333</b></i></p>
+				<p>For any device, the IP address must be the IP address of your computer</p>
+				<p>Obviously, you have to start KProxy Extension and run KProxy Agent in your computer to make it work.</p>
+			</div>
+			
+			<div class="title1"><a name="throubleshooting">7. Throubleshooting</a></div>
+			<div class="title2"><a name="throubleshooting_censored">7.1 I still have pages censored</a></div>
+			<div class="list">
+				<p>Your browser is not using the KProxy Extension.</p>
+				<div class="list">
+					<p>- Check that KProxy Extension is installed</p>
+					<p>- Check that KProxy Extension is enabled</p>
+					<p>- Check that KProxy Extension is running</p>
+				</div>
+			</div>
+			
+			<div class="title2"><a name="throubleshooting_server">7.2 KProxy Extension can't connect to any server</a></div>
+			<div class="list">
+				<p>- You are under a company proxy and need to install KProxy Agent. Please, check <a href="kproxy_agent">Bypass a company filter with KProxy Agent</a> section and 
+					follow the instructions.</p>
+				<p>- You have installed KProxy Agent, but it is no started. Please, go to the folder where you unzipped KProxy Agent and run it</p>
+				<p>- Antivirus is preventing KProxy Agent to start. Please, turn off the antivirus and windows firewall temporarily to check if this is the issue. 
+					If you found that this is the problem you have to configure your antivirus
+					and/or windows firewall to allow open connections on port 3333</p>
+					
+				<p>- You have installed KProxy Agent, you have started it but it closes. Please check that there is no other program listening on port 3333</p>
+					
+			</div>
+			
+			<div class="title2"><a name="throubleshooting_server">7.3 I have a PRO account but I can't access PRO servers</a></div>
+			<div class="list">
+				<p>- Please, check that you are logged into the extension and you have credits available. Click on the blue hat, then <a href="#account">account</a>.</p>
+					
+			</div>
+			<div class="title1"><a name="contact">8. Contact us</a></div>
+			<div class="list">
+				<p>If you have any problem and you can't resolve it with this help, please, contact us on:</p>
+				<p class="list"><i><b>support@kproxy.com</b></i></p>
+				<p>Also you can <a href="http://www.facebook.com/pages/KProxy/296325475547" target="_blank">contact us on facebook</a></p>
+			</div>
+
+		</div>
+  		
+  	</div>
+  </body>
+ </html>

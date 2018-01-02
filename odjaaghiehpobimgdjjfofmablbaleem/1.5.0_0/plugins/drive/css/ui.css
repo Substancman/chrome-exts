@@ -1,0 +1,89 @@
+/* Space out content a bit */
+body {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.settings,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/drive.png');
+  display: inline-block;
+}
+
+.title {
+  padding-top: 20px;
+}
+
+.headerbar {
+  /* layout */
+  height:60px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 0 8px;
+
+  /* style */
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.headerbar-item {
+  align-self: center;
+  margin: 0 7px;
+  color: #404040;
+  font-weight: lighter;
+}
+
+/* Customize container */
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main settings message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 10px;
+  background-color: rgb(0,0,0);
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Supporting settings content */
+.settings {
+  margin: 10px 0;
+}
+.settings p + h4 {
+  margin-top: 28px;
+}

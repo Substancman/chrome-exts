@@ -1,0 +1,25 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "js": [ "content-script.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "description": "Extends the Developer Tools, adding a sidebar that displays React Component Hierarchy.",
+   "devtools_page": "devtools.html",
+   "icons": {
+      "128": "asset/icon128.png",
+      "16": "asset/icon16.png",
+      "48": "asset/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjtL4B1BcO3LZOI6et1pBoHPsx+8f8XOcTG31U/aOAkLEERLECw7EP5T+uV0zrG2BFfhI2MjtJhpoxHGtWuz+P1JIDwAxqBSCyUrBsaJ5mpO/lXgLlmIJIO75OB+sz3mg1cQXQjLEZCHh/CiLc7S2k8XcvKz2JXK2PI+15EPpdaIhGJUP10Jn3eKZ/BI/76WWCkAWYle77LtVqEkD3GE13oKpYA/68wHaLEiNgA++UkgYHN8+Yf3erfuxMsnNtS5Vfbafz1ajC1el1DYWWvXDNOYiXmg6hPNf3qYbwzK2OjoR56mIUMOnV5kLtoFmy29n8mGefsFH3X2gCW63EHETVwIDAQAB",
+   "manifest_version": 2,
+   "name": "React-Sight",
+   "permissions": [ "tabs", "http://*/*", "https://*/*", "file:///*" ],
+   "short_name": "React-Sight",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.4",
+   "web_accessible_resources": [ "/backend/installHook.js" ]
+}

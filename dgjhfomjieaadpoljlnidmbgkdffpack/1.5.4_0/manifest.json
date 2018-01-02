@@ -1,0 +1,42 @@
+{
+   "applications": {
+      "gecko": {
+         "id": "firefox-extension@sourcegraph.com"
+      }
+   },
+   "background": {
+      "scripts": [ "js/background.bundle.js" ]
+   },
+   "browser_action": {
+      "default_popup": "options.html",
+      "default_title": "Sourcegraph"
+   },
+   "content_scripts": [ {
+      "js": [ "js/inject.bundle.js" ],
+      "matches": [ "https://github.com/*", "https://sourcegraph.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "css/style.bundle.css" ],
+      "matches": [ "https://github.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "default-src 'self'; script-src 'self'; connect-src 'self' https://sourcegraph-logging.telligentdata.com; img-src 'self' data:;",
+   "description": "Gives GitHub IDE powers: jump to definition and hover tooltips in code, PRs, and diffs",
+   "icons": {
+      "128": "img/icon-128.png",
+      "16": "img/icon-16.png",
+      "48": "img/icon-48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCl2X/axNHMbP0K/NCpMzGo/pgBSsHB2xKx6tfohORKtEv2wUMBPmkK3++kirrwYO2f8Ficyq6pjlXV8LjwPSjSw9KZj6bkDn8QNoSdCp6x9i8ZOWPw6UTQ6s54b3rGQNyvrvfD7S6LphxGEx8rNlkjpWKcrvY3+DyoFKHP/hax7wIDAQAB",
+   "manifest_version": 2,
+   "name": "Sourcegraph for GitHub",
+   "optional_permissions": [ "http://*/", "https://*/" ],
+   "options_ui": {
+      "chrome_style": true,
+      "page": "options.html"
+   },
+   "permissions": [ "cookies", "storage", "https://github.com/*", "https://sourcegraph.com/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.5.4",
+   "web_accessible_resources": [ "img/*" ]
+}

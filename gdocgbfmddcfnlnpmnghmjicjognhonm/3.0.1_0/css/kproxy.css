@@ -1,0 +1,325 @@
+@import url("fonts/fonts.css");
+
+html, body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	line-height: 1.4;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+img{
+
+}
+
+.stop_kproxy{
+	margin-top: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: opacity .25s ease-in-out;
+}
+
+.access_error {
+	margin: 0px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+
+
+.stop_kproxy:hover{
+	opacity: 0.8;
+}
+
+div#section{
+	text-align: center;
+	
+}
+
+div.section_title{
+	font-size: 32px;
+	font-family: "FontLight2";
+	text-align: center;
+	margin-top: 20px;
+}
+
+div.section_title img{
+	vertical-align: middle;
+	margin-top: -4px;
+}
+
+.font_bold{
+	font-family: "FontBold2";
+}
+
+img#kproxy_logo{
+	margin: auto;
+	margin-top: 20px;
+	display: block;
+	margin-bottom: 20px;
+	max-height: 55px;
+}
+
+#overloaded_img{
+	display: inline-block;
+	margin-right: 60px;
+	max-width: 330px;
+	float: left;
+}
+
+#overloaded_img img{
+	margin-top: 15px;
+	max-width: 100%;
+}
+
+p.overloaded{
+	text-align: center;
+	font-weight: bold;
+	color: #A00;
+	font-size: 16px;
+}
+
+#upgrade_welcome{
+	padding-top: 5px;
+	float: left;
+	width: 330px;
+}
+
+.wait_moment{
+	font-family: "FontRegular2", Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #3B5999;
+	line-height: 0.5;
+}
+
+.proxy_blue{
+	color: #3B5999;
+}
+
+#countdown{
+	font-family: "FontRegular2", Arial, Hevletica, sans-serif;
+	
+	margin-top: 40px;
+}
+
+
+#clock{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#hour{
+	display: inline-block;
+	color: #3B5999;
+	margin-left: 20px;
+	width: 100px;
+	margin-top: 5px;
+	font-size: 35px;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+#minutes_left{
+	display: inline-block;
+	font-size: 25px;
+	margin-top: 15px;
+	vertical-align: top;
+}
+
+#center{
+	max-width: 750px;
+	margin: auto;
+	padding: 0 10px;
+}
+
+#product_select{
+	margin-top: 20px;
+}
+
+p.upgrade_list{
+	color: #3B5999;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 0.5;
+}
+
+img.star{
+	vertical-align: -25%;
+}
+
+span.try_again{
+	font-weight: lighter;
+}
+
+div#pro_section{
+	background-color: #F9B503;
+	padding-top: 30px;
+	color: #FFF;
+}
+
+div.centered_icons_container{
+	text-align: center;
+	margin: 10px auto;
+	position: relative;
+}
+
+.centered_icon{
+	padding: 20px 10px 0px;
+	height: 260px;
+	position: relative;
+	font-size: 18px;
+	display: inline-block;
+	width: 230px;
+	line-height: 1.2;
+	font-weight: bold;
+	font-family: "FontLight2", Arial, Helvetica, sans-serif;
+}
+
+.centered_icon .title{
+	height: 42px;
+	background-color: #3B5999;
+}
+
+.centered_icon .title .text{
+	padding-top: 15px;
+}
+
+.centered_icon .discount{
+	position: absolute;
+	right: -5px;
+	top: -7px;
+}
+
+
+.centered_icon_img{
+	background-color: #FFF;
+	color: #000000;
+	font-size: 32px;
+	padding-bottom: 20px;
+	
+}
+
+.centered_icon_img .days{
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+#dont_wait{
+	text-align: center;
+	color: #000000;
+	font-size: 66px;
+	font-family: "FontBold2", Arial, Helvetica, sans-serif;
+}
+
+.bullet{
+	position: relative;
+	margin-bottom: 20px;
+}
+.pro_bullets{
+	text-align: center;
+	margin-top: 20px;
+}
+.bullet_img{
+	position: absolute;
+	top: -2px;
+}
+.bullet_txt{
+	padding-left: 30px;
+	color: #000000;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+
+}
+.bullets_block{
+	width: 340px;
+	display: inline-block;
+	text-align: left;
+	margin-right: 10px;
+	margin-left: 40px;
+}
+
+#agent_explica{
+	width: 700px;
+	max-width: 90%;
+	margin: auto;
+	color: #000000;
+	padding-bottom: 50px;
+}
+
+#agent_explica .titulo{
+	color: #000000;
+	font-size: 20px;
+	font-family: "FontRegular2";
+	
+}
+
+@media all and (max-width:805px) {
+	div.section_title img {
+		display: none;
+	}
+	
+	#dont_wait {
+		font-size: 60px;
+	}
+	
+	#countdown, #overloaded_img {
+		clear: both;
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	
+	#countdown {
+		margin-top: 20px;
+	}
+		
+	
+	#overloaded_img{
+		float: none;
+		margin: auto;
+		display: block;
+	}
+	
+	#upgrade_welcome {
+		float: none;
+		margin: auto;
+	}
+	
+	
+	
+}
+
+#upgrade_button {
+	margin: auto;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+
+@media all and (max-width:400px) {
+	.bullets_block {
+		margin-left: 10px;
+	}
+}
+	
+
+@media all and (max-width:380px) {
+	
+	#hour {
+		margin-left: 5px;
+	}
+	
+}
+
+
+@media all and (max-width:333px) {
+	
+	#minutes_left {
+    margin-top: 5px;
+	}
+	
+}

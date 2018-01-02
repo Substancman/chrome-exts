@@ -1,0 +1,28 @@
+{
+   "background": {
+      "scripts": [ "js/JsonValues.min.js", "js/background.min.js", "js/bg.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "img/icon19.png",
+         "38": "img/icon38.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "Responsive Web Design Tester"
+   },
+   "content_security_policy": "script-src 'self' 'unsafe-eval';object-src 'self';",
+   "description": "Responsive Web Design Tester is a quick and easy way to test your responsive website.",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw0eJrBxELgo4Kc1nynbov++Za0Dq8kRVDEnqY7X3fmUvdYemM+B+6M6EtaNrjSie2PLub/eu6FTz5q9aXYBkzfYytGisMPEYPhe48ioN0JU+n/1DNZATso3/7XkpcYmfs2CFO88bnTf4YNCxd+CFpqjI/HAuHoWjfufIkHYpS9oTU8X68gSWILKpsvNHINChHYhvPrdZIte6afZccLP+DODhe9+Dh3IqIvp+TZ5+wfqnPT+eF1aCG9kLtt/ykqbI1XH3OLekkOyC3Uvr3qt+DUWT9ETsK8a6lVh4OvSUrO+aYWr0VsJaJ1isahTAjuPKuTxoTHAQfASWf6GI2TYCKQIDAQAB",
+   "manifest_version": 2,
+   "name": "Responsive Web Design Tester",
+   "offline_enabled": true,
+   "options_page": "options.html",
+   "permissions": [ "webRequest", "webRequestBlocking", "webNavigation", "tabs", "http://*/*", "https://*/*", "contextMenus", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.24"
+}

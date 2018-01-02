@@ -1,0 +1,30 @@
+{
+   "author": "Jeff Pierce",
+   "background": {
+      "scripts": [ "js/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "images/icon_off_ap.png",
+      "default_popup": "Popup_Main.html",
+      "default_title": "Analytics Pros DataLayer Inspector+"
+   },
+   "content_scripts": [ {
+      "css": [ "css/Content_GTM_Injector.css" ],
+      "js": [ "js/Content_DL_Inspector.js", "js/Content_GTM_Injector.js" ],
+      "matches": [ "https://*/*", "http://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; object-src 'self'",
+   "description": "This extension provides tools for Digital Analysts",
+   "icons": {
+      "128": "images/icon128_ap.png",
+      "16": "images/icon16_ap.png",
+      "48": "images/icon48_ap.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr8CxJ+LsRhF42w96JQvf+XDnOrofKPuS5LnRXbd7IbcPzaYmzcJVVr/UsmMG4Tv48KrQPWsjVpWnrl5gheMl+EnwtmhdJBiQLopFNk4PA0VsdIt80TEoe5bC91EE0EiFZT2XGLD2lDTwy8BtdCJNxm9sGPsbs0yzQ1kIspJEK6/Zbj8vQhZ0b1Nik6k+FClrhIbUj/LqDm+EDj/dh1AH3++Yfp8YIUDm1qwqucTKYPCaXWu3OD3lvPOycGaoGpBA3p+lQJj7kXE/L3PXTDgBLypslISVQYgzQ+AJIDjK7ux6Qz9p/ZELSvQ8aiSDOULylupKlTUUvVjK+N92TLRryQIDAQAB",
+   "manifest_version": 2,
+   "name": "Analytics Pros dataLayer Inspector+",
+   "permissions": [ "tabs", "http://*.google.com/", "unlimitedStorage", "activeTab", "storage", "http://*/*", "https://*/*", "webRequest", "webRequestBlocking" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.2"
+}

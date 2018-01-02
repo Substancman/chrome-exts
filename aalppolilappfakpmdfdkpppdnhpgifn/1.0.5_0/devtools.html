@@ -1,0 +1,122 @@
+<!--
+  Created by Grant Kang, William He, and David Sally on 9/10/17.
+  Copyright © 2017 React Sight. All rights reserved.
+ -->
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>React Sight</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div>
+    <h5>
+      <img src='./asset/floatinggif2.gif' id='logoHeader'> React Sight</h5>
+    <p>Hover over nodes to see State and Props</p>
+    <nav class="breadcrumb"></nav>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-sm-pull-6" id="tree-reactsight">
+        <div class='tree'>
+          <div class='loading'>
+            <div id="loader-container">
+              <img id='loader-icon' src='./asset/floatinggif2.gif'>
+              <h4 id='loader-header'>something funny here</h4>
+              <h6 id='loader-sub-header'>Starting</h6>
+            </div>
+          </div>
+
+          <div class="svgnavbar">
+            <li id="button-container">
+              <input id='router-btn' type='checkbox' unchecked>
+              <label for="router-btn" id="textrouter">Hide Router</label>
+            </li>
+
+            <li id="button-container">
+              <input id='dom-btn' type='checkbox' unchecked>
+              <label for="dom-btn" id="textrouter">Hide DOM</label>
+            </li>
+
+            <li id="button-container">
+              <input id='redux-btn' type='checkbox' unchecked>
+              <label for="redux-btn" id="textrouter">Hide Redux</label>
+            </li>
+
+            <li id='sliders-container'>
+              <p>Horizontal Spacing</p>
+              <input class="range-slider" type="range" min="0" max="20" value="10" id="hSlider">
+              <br>
+              <p>Vertical Spacing</p>
+              <input class="range-slider" type="range" min="0" max="20" value="10" id="vSlider">
+            </li>
+
+            <li id="button-container">
+              <div class="icon-button" id="zoom-in-btn">
+                <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                  <path d="M0 0h24v24H0V0z" fill="none"/>
+                  <path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/>
+                </svg>
+              </div>
+              <div class="icon-button" id="zoom-out-btn">
+                <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0V0z" fill="none"/>
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z"/>
+                </svg>
+              </div>
+            </li>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-push-6" id="sidebar-reactsight">
+        <ul class="sidebar-nav">
+
+          <li id='store-container'>
+            <h2>Store</h2>
+            <div id="store"></div>
+            <br>
+          </li>
+
+          <li id='state-container'>
+            <h2>State</h2>
+            <div id='state'></div>
+            <br>
+          </li>
+
+          <li id='props-container'>
+            <h2>Props</h2>
+            <div id='props'></div>
+            <br>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="./build/bundle.js"></script>
+</body>
+
+</html>
